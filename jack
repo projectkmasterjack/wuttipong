@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แบบฟอร์มออกแบบการสอน</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .form-container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group textarea {
+      height: 100px;
+    }
+    button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>แบบฟอร์มออกแบบการสอน</h1>
+    <form id="teaching-form">
+      <div class="form-group">
+        <label for="topic">หัวเรื่อง:</label>
+        <input type="text" id="topic" name="topic" placeholder="กรอกหัวเรื่อง">
+      </div>
+      <div class="form-group">
+        <label for="objective">วัตถุประสงค์:</label>
+        <textarea id="objective" name="objective" placeholder="กรอกวัตถุประสงค์"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="belief">ความเชื่อ:</label>
+        <textarea id="belief" name="belief" placeholder="กรอกความเชื่อ"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="principles">หลักการ/แนวทาง:</label>
+        <textarea id="principles" name="principles" placeholder="กรอกหลักการหรือแนวทาง"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="steps">ขั้นตอนการจัดการเรียนรู้:</label>
+        <textarea id="steps" name="steps" placeholder="กรอกขั้นตอน"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="techniques">เทคนิคการสอน:</label>
+        <textarea id="techniques" name="techniques" placeholder="กรอกเทคนิคการสอน"></textarea>
+      </div>
+    </form>
+    <button onclick="printForm()">ปริ้นแบบฟอร์ม</button>
+  </div>
+
+  <script>
+    function printForm() {
+      const printContent = document.querySelector('.form-container').innerHTML;
+      const printWindow = window.open('', '', 'width=800,height=600');
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>พิมพ์แบบฟอร์ม</title>
+          </head>
+          <body>${printContent}</body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.print();
+    }
+  </script>
+</body>
+</html>
