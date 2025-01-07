@@ -9,28 +9,87 @@
 
 <style>
     body {
-        font-family: Arial, sans-serif;
-        background-color: #f7f7f7;
+        font-family: 'Arial', sans-serif;
+        background-color: #eaf7ff; /* สีพื้นหลังอ่อน */
         display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh; /* รองรับหน้าจอเล็ก */
+        justify-content: center; /* จัดกึ่งกลางแนวนอน */
+        align-items: center; /* จัดกึ่งกลางแนวตั้ง */
+        min-height: 100vh; /* สูงเต็มหน้าจอ */
         margin: 0;
     }
+
     form {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, #ffffff, #f9fcff); /* ไล่สีพื้นหลังฟอร์ม */
+        padding: 30px;
+        border-radius: 15px; /* มุมโค้งมน */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* เงาที่ดูนุ่มนวล */
         width: 100%;
         max-width: 600px;
-        min-width: 320px; /* รองรับหน้าจอเล็ก */
+        min-width: 320px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease; /* เพิ่ม animation */
     }
+
+    form:hover {
+        transform: scale(1.02); /* ขยายเล็กน้อยเมื่อ hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* เพิ่มเงาเมื่อ hover */
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #333;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ตัวอักษร */
+    }
+
+    label {
+        display: block;
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 8px;
+        font-weight: bold;
+    }
+
     textarea, select, input {
-        width: calc(100% - 10px); /* ป้องกันการล้นขอบ */
-        padding: 10px;
-        margin-bottom: 15px;
+        width: calc(100% - 20px);
+        padding: 12px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd; /* เส้นขอบบาง */
+        border-radius: 8px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* เงาด้านใน */
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
+
+    textarea:focus, select:focus, input:focus {
+        border-color: #56b3ff; /* เปลี่ยนสีขอบเมื่อ focus */
+        box-shadow: 0 0 5px rgba(86, 179, 255, 0.5); /* เงาเมื่อ focus */
+        outline: none;
+    }
+
+    button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: #56b3ff; /* สีปุ่ม */
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+          margin-bottom: 20px; /* เพิ่มช่องว่างระหว่างปุ่ม */
+    }
+
+    button:hover {
+        background-color: #479ae6; /* สีปุ่มเมื่อ hover */
+        box-shadow: 0 5px 10px rgba(86, 179, 255, 0.3); /* เพิ่มเงาเมื่อ hover */
+    }
+
+    button:active {
+        background-color: #3b8ed4;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2); /* เงาด้านในเมื่อ active */
+    }
+
     @media (min-width: 768px) {
         form {
             max-width: 800px; /* สำหรับหน้าจอใหญ่ */
@@ -38,11 +97,12 @@
     }
 </style>
 
-    </style>
+
+
 </head>
 <body>
     <form>
-        <h1>แบบฟอร์มการออกแบบการสอน</h1>
+        <h1>แบบฟอร์มการออกแบบการสอน CTE KMUTT </h1>
         <label for="topic">หัวข้อเรื่อง:</label>
         <textarea id="topic" name="topic"></textarea>
 
