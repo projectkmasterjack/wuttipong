@@ -4,38 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แบบฟอร์มการออกแบบการสอน CTE KMUTT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        textarea, select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .step {
+            margin-bottom: 20px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>แบบฟอร์มการออกแบบการสอน</h1>
     <form>
+        <h1>แบบฟอร์มการออกแบบการสอน</h1>
         <label for="topic">หัวข้อเรื่อง:</label>
-                   <label for="step1_notes"></label>
-            <textarea id="step1_notes" name="step1_notes"></textarea><br><br>
+        <textarea id="topic" name="topic"></textarea>
+
         <label for="objective">วัตถุประสงค์:</label>
-      <label for="step1_notes"></label>
-            <textarea id="step1_notes" name="step1_notes"></textarea><br><br>
+        <textarea id="objective" name="objective"></textarea>
 
         <label for="belief">ความเชื่อทางการศึกษา:</label>
         <select id="belief" name="belief">
             <option value="idealism">จิตนิยม (Idealism)</option>
             <option value="materialism">วัตถุนิยม (Materialism)</option>
-            <option value="experientialism">ประสบการณ์นิยม (Experimentailism)</option>
-            <option value="existentialism">อัตถนิยม (Existenialism)</option>
-        </select><br><br>
+            <option value="experientialism">ประสบการณ์นิยม (Experientialism)</option>
+            <option value="existentialism">อัตถนิยม (Existentialism)</option>
+        </select>
 
         <label for="learning_approach">แนวทางการจัดการเรียนรู้:</label>
         <select id="learning_approach" name="learning_approach">
             <option value="teacher_center">ผู้สอนเป็นแกน (Teacher Center)</option>
             <option value="student_center">ผู้เรียนเป็นแกน (Student Center)</option>
             <option value="collaborative">ผู้เรียนและผู้สอนร่วมมือกัน (Collaborative Learning)</option>
-            <option value="teacher_center_focus">การจัดการเรียนการสอนโดยเน้นครูเป็นศูนย์กลาง</option>
-            <option value="student_center_focus">การจัดการเรียนการสอนโดยเน้นผู้เรียนเป็นศูนย์กลาง</option>
-            <option value="collaborative_principle">หลักการจัดการเรียนการสอนโดยครูและผู้เรียนร่วมมือกัน</option>
-            <option value="no_teacher">หลักการจัดการเรียนการสอนโดยไม่มีครู</option>
-            <option value="knowledge_transmission">การถ่ายทอดความรู้</option>
-            <option value="knowledge_creation">การสร้างองค์ความรู้</option>
-            <option value="new_knowledge_development">การพัฒนาองค์ความรู้ใหม่</option>
-        </select><br><br>
+        </select>
 
         <label for="concept">แนวคิด/หลักการ:</label>
         <select id="concept" name="concept">
@@ -43,1062 +95,463 @@
             <option value="passive_learning">Passive Learning</option>
             <option value="kolb">Kolb's Learning Cycle</option>
             <option value="flip_classroom">Flip Classroom</option>
-        </select><br><br>
+        </select>
 
-        <label for="teaching_model">รูปแบบการสอน:</label>
-        <select id="teaching_model" name="teaching_model">
-            <option value="4mat">4MAT (เชื่อมโยง: กระตุ้นความสนใจ (Why?) สำรวจ: เรียนรู้ผ่านประสบการณ์ (What?) ปรับใช้: ฝึกแก้ปัญหาจริง (How?) ประยุกต์: นำไปต่อยอดในชีวิตจริง (If?))</option>
-            <option value="choice_mapping">Choice Mapping (ระบุเป้าหมาย วิเคราะห์ตัวเลือกและผลลัพธ์ ประเมินความเหมาะสมของแต่ละตัวเลือก ตัดสินใจเลือกและลงมือปฏิบัติ)</option>
-            <option value="cippa">CIPPA (C (Construction): การสร้างความรู้ I (Interaction): ปฏิสัมพันธ์ P (Process): กระบวนการเรียนรู้ P (Product): ผลงานหรือผลลัพธ์ A (Assessment): การประเมินผล)</option>
-            <option value="circ">CIRC (การตั้งคำถามร่วมกัน การอ่าน/เขียนร่วมกัน การอภิปราย การสรุปผล)</option>
-            <option value="design_thinking">Design Thinking (เข้าใจปัญหา (Empathize) กำหนดปัญหา (Define) ระดมความคิด (Ideate) สร้างต้นแบบ (Prototype) ทดลองและแก้ไข (Test))</option>
-            <option value="gpas">GPAS (ตั้งเป้าหมาย (Goal) ออกแบบกระบวนการ (Process) ลงมือปฏิบัติ (Action) ประเมินผลลัพธ์ (Success))</option>
-            <option value="grow_model">Grow Model กำหนดเป้าหมาย (Goal) วิเคราะห์สถานการณ์ปัจจุบัน (Reality) หาทางเลือก (Options) วางแผนการดำเนินการ (Way Forward))</option>
-            <option value="open_process">กระบวนการเปิด (ตั้งคำถามปลายเปิด กระตุ้นการคิดเชิงลึก เปิดโอกาสให้แสดงความคิดเห็น สรุปความคิดเห็นร่วมกัน) </option>
-            <option value="problem_based">การใช้ปัญหาเป็นฐาน (ระบุปัญหา ศึกษาข้อมูล สร้างแนวทางแก้ไข ทดลองแก้ปัญหา ประเมินผล)</option>
-            <option value="model_discovery">ค้นคว้าหารูปแบบ (กำหนดหัวข้อ ศึกษาวิจัย สร้างและวิเคราะห์รูปแบบ นำเสนอรูปแบบ)</option>
-            <option value="model_discovery">คิดสร้างสรรค์ (ตั้งคำถาม กระตุ้นจินตนาการ สร้างแนวคิดใหม่ ประเมินและปรับปรุง) </option>
-            <option value="model_discovery">โครงงานเป็นฐาน (เลือกหัวข้อ วางแผน ลงมือทำ นำเสนอผลงาน ประเมินผล) </option>
-            <option value="model_discovery">ซักค้าน (ตั้งคำถาม กระตุ้นการคิด ถามตอบอย่างลึกซึ้ง สรุปความคิดเห็นร่วม) </option>
-            <option value="model_discovery">ผลลัพธ์ปิด (ให้โจทย์ที่มีคำตอบเฉพาะ ช่วยให้นักเรียนคิดวิเคราะห์ สรุปคำตอบชัดเจน) </option>
-            <option value="model_discovery">พัฒนาปัญหาแบบเปิด (ระบุปัญหาที่ไม่มีคำตอบแน่นอน สร้างแนวทางหลากหลาย ทดลองแก้ปัญหา ประเมินวิธีการที่ดีที่สุด) </option>
-            <option value="model_discovery">สืบเสาะ (5E) (กระตุ้นความสนใจ (Engage) สำรวจ (Explore) อธิบาย (Explain) ขยายความรู้ (Elaborate) ประเมินผล (Evaluate)) </option>
-            <option value="model_discovery">อริยสัจ 4 (ระบุปัญหา (ทุกข์) วิเคราะห์สาเหตุ (สมุทัย) กำหนดเป้าหมายแก้ปัญหา (นิโรธ) วางแผนปฏิบัติ (มรรค)) </option>
-            <option value="model_discovery">แฮร์บาร์ต (การเตรียมตัว (Preparation) การนำเสนอ (Presentation) การเปรียบเทียบ (Comparison) การสรุป (Generalization) การประยุกต์ (Application)) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนทางตรงแบบใช้ผลการวิจัย(Research-Based Direct Instruction) (อิงผลการวิจัย วางแผนการสอนชัดเจน สอนตามแผน ประเมินผลตามมาตรฐาน) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนทางตรงแบบใช้ทฤษฎีการเรียนรู้ (Learning Theory-Based Direct Instruction) (วิเคราะห์ตามทฤษฎีการเรียนรู้ วางแผนการสอน ทดลองสอน ปรับปรุงและประเมิน) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนตามเอกัตภาพ (Individualized Instruction) (วิเคราะห์ความต้องการผู้เรียน ออกแบบแผนเฉพาะบุคคล จัดการเรียนการสอน ประเมินผลรายบุคคล) </option>
-            <option value="model_discovery">การจัดการเรียนรู้โดยผู้เรียนนำตนเอง(Self-Directed Learning) (ตั้งเป้าหมายการเรียนรู้ วางแผนด้วยตนเองศึกษาและฝึกฝน ประเมินผลด้วยตนเอง) </option>
-            <option value="model_discovery">การจัดการเรียนรู้แบบรู้จริง (Mastery Learning) (สอนเนื้อหาชัดเจน ทดสอบความเข้าใจ สอนเสริมเมื่อจำเป็นประเมินผลเพื่อความเชี่ยวชาญ) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนแบบรับประกันผล(Verification Teaching) (สอนข้อมูลชัดเจน ตรวจสอบความเข้าใจปรับปรุงความรู้ ประเมินผล) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนแบบเน้นมโนทัศน์ (Concept-Based Instruction) (นำเสนอแนวคิดสำคัญ ยกตัวอย่าง ฝึกปฏิบัติ ประเมินความเข้าใจ) </option>
-            <option value="model_discovery">การจัดการเรียนรู้แบบเน้นประสบการณ์ (Experiential Learning) (ประสบการณ์ตรง การสะท้อนผล การวิเคราะห์ การประยุกต์) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนแบบรับใช้สังคม (Service Teaching) (เลือกปัญหาสังคม วางแผนช่วยเหลือ ลงมือปฏิบัติ สรุปและสะท้อนผล) </option>
-            <option value="model_discovery">การจัดการเรียนการเรียนรู้ตามสภาพจริง(Authentic Learning) (ใช้สถานการณ์จริง ฝึกคิดและแก้ปัญหา สร้างผลงานที่จับต้องได้ ประเมินแบบองค์รวม) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนแบบเน้นกระบวนการสืบสอบ(Inquiry-Based Instruction) (ตั้งคำถาม ค้นคว้า วิเคราะห์ข้อมูล สรุปผล) </option>
-            <option value="model_discovery">การจัดการเรียนการสอนโดยเน้นกระบวนการคิด (Thinking-Based Instruction) (ฝึกตั้งคำถาม ส่งเสริมการคิด วางแผนแก้ปัญหา ประเมินการคิด) </option>
-           <option value="model_discovery">การจัดการเรียนการสอนโดยเน้นกระบวนการกลุ่ม (Group Process-Based Instruction) (แบ่งกลุ่ม ตั้งเป้าหมาย ทำงานร่วมกัน สรุปผลงาน) </option>
-           <option value="model_discovery">การจัดการเรียนการสอนโดยเน้นกระบวนการวิจัย (Research-Based Instruction) (กำหนดปัญหา ค้นคว้าวิจัยสรุปผลการวิจัย ประยุกต์ใช้) </option>
-           <option value="model_discovery">การจัดการเรียนการสอนโดยเน้นกระบวนการเรียนรู้ (Instruction Emphasizing Self-Learning Process) (ออกแบบกิจกรรมให้ผู้เรียนศึกษาเอง ฝึกปฏิบัติด้วยตนเอง วิเคราะห์ข้อผิดพลาดสรุปผลด้วยตนเอง) </option>
-           <option value="model_discovery">การจัดการเรียนการสอนแบบเน้นกระบวนการ (Integrated Instruction) (บูรณาการเนื้อหาหลายสาขา ออกแบบกิจกรรมเชื่อมโยง สอนและประเมินผล ส่งเสริมการเชื่อมโยงความรู้) </option>
-  
-           <!-- Additional options omitted for brevity -->
-        </select><br><br>
+       <label for="teaching_model">รูปแบบการสอน:</label>
+<select id="teaching_model" name="teaching_model">
+  <option value="4mat">1) 4MAT (เชื่อมโยง: กระตุ้นความสนใจ (Why?) สำรวจ: เรียนรู้ผ่านประสบการณ์ (What?) ปรับใช้: ฝึกแก้ปัญหาจริง (How?) ประยุกต์: นำไปต่อยอดในชีวิตจริง (If?))</option>
+  <option value="choice_mapping">2) Choice Mapping (ระบุเป้าหมาย วิเคราะห์ตัวเลือกและผลลัพธ์ ประเมินความเหมาะสมของแต่ละตัวเลือก ตัดสินใจเลือกและลงมือปฏิบัติ)</option>
+  <option value="cippa">3) CIPPA (C (Construction): การสร้างความรู้ I (Interaction): ปฏิสัมพันธ์ P (Process): กระบวนการเรียนรู้ P (Product): ผลงานหรือผลลัพธ์ A (Assessment): การประเมินผล)</option>
+  <option value="circ">4) CIRC (การตั้งคำถามร่วมกัน การอ่าน/เขียนร่วมกัน การอภิปราย การสรุปผล)</option>
+  <option value="design_thinking">5) Design Thinking (เข้าใจปัญหา (Empathize) กำหนดปัญหา (Define) ระดมความคิด (Ideate) สร้างต้นแบบ (Prototype) ทดลองและแก้ไข (Test))</option>
+  <option value="gpas">6) GPAS (ตั้งเป้าหมาย (Goal) ออกแบบกระบวนการ (Process) ลงมือปฏิบัติ (Action) ประเมินผลลัพธ์ (Success))</option>
+  <option value="grow_model">7) Grow Model (กำหนดเป้าหมาย (Goal) วิเคราะห์สถานการณ์ปัจจุบัน (Reality) หาทางเลือก (Options) วางแผนการดำเนินการ (Way Forward))</option>
+  <option value="open_process">8) กระบวนการเปิด (ตั้งคำถามปลายเปิด กระตุ้นการคิดเชิงลึก เปิดโอกาสให้แสดงความคิดเห็น สรุปความคิดเห็นร่วมกัน)</option>
+  <option value="problem_based_learning">9) การใช้ปัญหาเป็นฐาน (ระบุปัญหา ศึกษาข้อมูล สร้างแนวทางแก้ไข ทดลองแก้ปัญหา ประเมินผล)</option>
+  <option value="pattern_exploration">10) ค้นคว้าหารูปแบบ (กำหนดหัวข้อ ศึกษาวิจัย สร้างและวิเคราะห์รูปแบบ นำเสนอรูปแบบ)</option>
+  <option value="creative_thinking">11) คิดสร้างสรรค์ (ตั้งคำถาม กระตุ้นจินตนาการ สร้างแนวคิดใหม่ ประเมินและปรับปรุง)</option>
+  <option value="project_based_learning">12) โครงงานเป็นฐาน (เลือกหัวข้อ วางแผน ลงมือทำ นำเสนอผลงาน ประเมินผล)</option>
+  <option value="critical_questioning">13) ซักค้าน (ตั้งคำถาม กระตุ้นการคิด ถามตอบอย่างลึกซึ้ง สรุปความคิดเห็นร่วม)</option>
+  <option value="closed_outcome">14) ผลลัพธ์ปิด (ให้โจทย์ที่มีคำตอบเฉพาะ ช่วยให้นักเรียนคิดวิเคราะห์ สรุปคำตอบชัดเจน)</option>
+  <option value="open_problem_development">15) พัฒนาปัญหาแบบเปิด (ระบุปัญหาที่ไม่มีคำตอบแน่นอน สร้างแนวทางหลากหลาย ทดลองแก้ปัญหา ประเมินวิธีการที่ดีที่สุด)</option>
+  <option value="5e_inquiry">16) สืบเสาะ (5E) (กระตุ้นความสนใจ (Engage) สำรวจ (Explore) อธิบาย (Explain) ขยายความรู้ (Elaborate) ประเมินผล (Evaluate))</option>
+  <option value="four_noble_truths">17) อริยสัจ 4 (ระบุปัญหา (ทุกข์) วิเคราะห์สาเหตุ (สมุทัย) กำหนดเป้าหมายแก้ปัญหา (นิโรธ) วางแผนปฏิบัติ (มรรค))</option>
+  <option value="herbart">18) แฮร์บาร์ต (การเตรียมตัว (Preparation) การนำเสนอ (Presentation) การเปรียบเทียบ (Comparison) การสรุป (Generalization) การประยุกต์ (Application))</option>
+  <option value="research_based_instruction">19) การจัดการเรียนการสอนทางตรงแบบใช้ผลการวิจัย (Research-Based Direct Instruction) (อิงผลการวิจัย วางแผนการสอนชัดเจน สอนตามแผน ประเมินผลตามมาตรฐาน)</option>
+  <option value="learning_theory_based_instruction">20) การจัดการเรียนการสอนทางตรงแบบใช้ทฤษฎีการเรียนรู้ (Learning Theory-Based Direct Instruction) (วิเคราะห์ตามทฤษฎีการเรียนรู้ วางแผนการสอน ทดลองสอน ปรับปรุงและประเมิน)</option>
+  <option value="individualized_instruction">21) การจัดการเรียนการสอนตามเอกัตภาพ (Individualized Instruction) (วิเคราะห์ความต้องการผู้เรียน ออกแบบแผนเฉพาะบุคคล จัดการเรียนการสอน ประเมินผลรายบุคคล)</option>
+  <option value="self_directed_learning">22) การจัดการเรียนรู้โดยผู้เรียนนำตนเอง (Self-Directed Learning) (ตั้งเป้าหมายการเรียนรู้ วางแผนด้วยตนเองศึกษาและฝึกฝน ประเมินผลด้วยตนเอง)</option>
+  <option value="mastery_learning">23) การจัดการเรียนรู้แบบรู้จริง (Mastery Learning) (สอนเนื้อหาชัดเจน ทดสอบความเข้าใจ สอนเสริมเมื่อจำเป็นประเมินผลเพื่อความเชี่ยวชาญ)</option>
+  <option value="verification_teaching">24) การจัดการเรียนการสอนแบบรับประกันผล (Verification Teaching) (สอนข้อมูลชัดเจน ตรวจสอบความเข้าใจปรับปรุงความรู้ ประเมินผล)</option>
+  <option value="concept_based_instruction">25) การจัดการเรียนการสอนแบบเน้นมโนทัศน์ (Concept-Based Instruction) (นำเสนอแนวคิดสำคัญ ยกตัวอย่าง ฝึกปฏิบัติ ประเมินความเข้าใจ)</option>
+  <option value="experiential_learning">26) การจัดการเรียนรู้แบบเน้นประสบการณ์ (Experiential Learning) (ประสบการณ์ตรง การสะท้อนผล การวิเคราะห์ การประยุกต์)</option>
+  <option value="service_teaching">27) การจัดการเรียนการสอนแบบรับใช้สังคม (Service Teaching) (เลือกปัญหาสังคม วางแผนช่วยเหลือ ลงมือปฏิบัติ สรุปและสะท้อนผล)</option>
+  <option value="authentic_learning">28) การจัดการเรียนการเรียนรู้ตามสภาพจริง (Authentic Learning) (ใช้สถานการณ์จริง ฝึกคิดและแก้ปัญหา สร้างผลงานที่จับต้องได้ ประเมินแบบองค์รวม)</option>
+  <option value="inquiry_based_instruction">29) การจัดการเรียนการสอนแบบเน้นกระบวนการสืบสอบ (Inquiry-Based Instruction) (ตั้งคำถาม ค้นคว้า วิเคราะห์ข้อมูล สรุปผล)</option>
+  <option value="thinking_based_instruction">30) การจัดการเรียนการสอนโดยเน้นกระบวนการคิด (Thinking-Based Instruction) (ฝึกตั้งคำถาม ส่งเสริมการคิด วางแผนแก้ปัญหา ประเมินการคิด)</option>
+  <option value="group_process_based_instruction">31) การจัดการเรียนการสอนโดยเน้นกระบวนการกลุ่ม (Group Process-Based Instruction) (แบ่งกลุ่ม ตั้งเป้าหมาย ทำงานร่วมกัน สรุปผลงาน)</option>
+  <option value="research_based_instruction">32) การจัดการเรียนการสอนโดยเน้นกระบวนการวิจัย (Research-Based Instruction) (กำหนดปัญหา ค้นคว้าวิจัยสรุปผลการวิจัย ประยุกต์ใช้)</option>
+  <option value="self_learning_process_instruction">33) การจัดการเรียนการสอนโดยเน้นกระบวนการเรียนรู้ (Instruction Emphasizing Self-Learning Process) (ออกแบบกิจกรรมให้ผู้เรียนศึกษาเอง ฝึกปฏิบัติด้วยตนเอง วิเคราะห์ข้อผิดพลาดสรุปผลด้วยตนเอง)</option>
+  <option value="integrated_instruction">34) การจัดการเรียนการสอนแบบเน้นกระบวนการ (Integrated Instruction) (บูรณาการเนื้อหาหลายสาขา ออกแบบกิจกรรมเชื่อมโยง สอนและประเมินผล ส่งเสริมการเชื่อมโยงความรู้)</option>
+</select>
 
         <h3>ขั้นตอนการสอน</h3>
         <div id="teaching_steps">
-            <h4>ขั้นตอนที 1 <input type="text" id="objective" name="objective" required><br><br>
+            <div class="step" id="step_1">
+            <h4>ขั้นตอนที่ 1</h4>
             <label for="step1_method">วิธีการสอน:</label>
             <select id="step1_method" name="step1_method">
-            <option value="case_study">กรณีศึกษา (Case Study Method)</option>
-            <option value="socratic">โซคราติส (Socratic Method)</option>
-            <option value="laboratory">ทดลอง (Laboratory Method)</option>
-            <option value="tutoring">ทบทวน (Tutoring Method)</option>
-            <option value="field_trip">ทัศนศึกษา</option>
-            <option value="deductive">นิรนัย: ครูหลักการ นักเรียนพิสูจน์</option>
-            <option value="role_play">บทบาทสมมุติ (Role Play)</option>
-            <option value="lecture">บรรยาย (Lecturing Method)</option>
-            <option value="group_problem_solving">แบ่งกลุ่มแก้ปัญหา (Syndicate Method)</option>
-            <option value="performance">ปฏิบัติ (Performance Method)</option>
-            <option value="sensory">ประสาทสัมผัส</option>
-            <option value="study_assignment">มอบหมายงาน (Study Assignment Method)</option>
-            <option value="learning_center">ศูนย์การเรียนรู้</option>
-            <option value="simulation">สถานการณ์จำลอง</option>
-            <option value="demonstration">สาธิต (Demonstration Method)</option>
-            <option value="drama">แสดงละคร</option>
-            <option value="discussion">อภิปราย (Discussion Method)</option>
-            <option value="inductive">อุปนัย: นักเรียนสังเกตและหาคำตอบ</option>
-            <option value="none">ไม่มี</option>
-         <!-- Additional options omitted for brevity -->
-         
-            </select><br><br>
-            <label for="step1_group_activity">กิจกรรมกลุ่ม:</label>
-            <select id="step1_group_activity" name="step1_group_activity">
-                <option value="choice_mapping">Choice Mapping</option>
-                <option value="gallery_walk">Gallery Walk</option>
-                <option value="rc">RC: แปะโจทย์หาคำตอบ</option>
-                <option value="stad">STAD</option>
-                <option value="tai">TAI</option>
-                <option value="tgt">TGT</option>
-                <option value="think_pair_share">Think-Pair-Share</option>
-                <option value="timeline">Timeline: เรียงลำดับ</option>
-                <option value="why_why_diagram">Why Why Diagram</option>
-                <option value="world_cafe">World Café</option>
-                <option value="yes_no">Yes หรือ No</option>
-                <option value="game_show">เกมส์โชว์: ทายคำ</option>
-                <option value="charades">เกมส์ใบ้คำ</option>
-                <option value="pictionary">เกมส์ใบ้ภาพ</option>
-                <option value="cross_the_line">ข้ามเส้น</option>
-                <option value="write_assignment">เขียนตามโจทย์</option>
-                <option value="research">ค้นคว้าข้อมูล</option>
-                <option value="video_clip">คลิปวีดีโอ</option>
-                <option value="creative_thinking">คิดสร้างสรรค์</option>
-                <option value="matching">จับคู่คำ</option>
-                <option value="jigsaw">จิ๊กซอ</option>
-                <option value="imagination">จินตนาการ</option>
-                <option value="stance">จุดยืน: ตัดสินใจตามสิ่งที่คิด</option>
-                <option value="shindoku">ชินโดกุ (Syncronicity)</option>
-                <option value="use_devices">ใช้โทรศัพท์หรือแทปเล็ต</option>
-                <option value="use_objects">ใช้วัตถุหรือสิ่งของใกล้ตัว</option>
-                <option value="knowledge_market">ตลาดนัดความรู้</option>
-                <option value="nine_square">ตาราง 9 ช่อง</option>
-                <option value="songwriting">แต่งเพลงจากโจทย์</option>
-                <option value="debate">ถกเถียง</option>
-                <option value="dice_game">ทอดลูกเต๋า</option>
-                <option value="board_game">บอร์ดเกมส์</option>
-                <option value="snake_ladder">บันไดงู</option>
-                <option value="bingo">บิงโก</option>
-                <option value="sensory">ประสาทสัมผัส</option>
-                <option value="comparison">เปรียบเทียบ</option>
-                <option value="rock_paper_scissors">เป่า ยิง ฉุบ</option>
-                <option value="flip_cards">เปิดแผ่นป้าย</option>
-                <option value="venn_diagram">แผนภาพเวนน์: งานที่ควรทำ</option>
-                <option value="leaf_power">พลังใบ: นำใบไม้มาเรียงเล่าเรื่อง</option>
-                <option value="evaluate_incomplete">พิจารณาสิ่งที่ไม่สมบูรณ์</option>
-                <option value="post_it">โพสอิท</option>
-                <option value="short_film">ภาพยนต์สั้น</option>
-                <option value="line_drawing">โยงเส้น</option>
-                <option value="brainstorm">ระดมสมอง (Brainstorm)</option>
-                <option value="storytelling">เล่านิทาน</option>
-                <option value="answer_hunt">วิ่งหาคำตอบ</option>
-                <option value="create_project">สร้างชิ้นงาน</option>
-                <option value="individual_reflection">สะท้อนเป็นรายบุคคล</option>
-                <option value="dialogue">สุนทรียสนทนา</option>
-                <option value="six_hats">หมวก 6 ใบ</option>
-                <option value="pick_card">หยิบไพ่</option>
-                <option value="product_design">ออกแบบผลิตภัณฑ์</option>
-                <option value="read_stats">อ่านข้อมูลสถิติ</option>
-                <option value="innetka">อินเนทก้า: เรียงตาม Speed</option>
+                <option value="case_study">1) กรณีศึกษา (Case Study Method)</option>
+                <option value="socratic">2) โซคราติส (Socratic Method)</option>
+                <option value="laboratory">3) ทดลอง (Laboratory Method)</option>
+                <option value="tutoring">4) ทบทวน (Tutoring Method)</option>
+                <option value="field_trip">5) ทัศนศึกษา</option>
+                <option value="deductive">6) นิรนัย: ครูหลักการ นักเรียนพิสูจน์</option>
+                <option value="role_play">7) บทบาทสมมุติ (Role Play)</option>
+                <option value="lecturing">8) บรรยาย (Lecturing Method)</option>
+                <option value="syndicate">9) แบ่งกลุ่มแก้ปัญหา (Syndicate Method)</option>
+                <option value="performance">10) ปฏิบัติ (Performance Method)</option>
+                <option value="sensory">11) ประสาทสัมผัส</option>
+                <option value="study_assignment">12) มอบหมายงาน (Study Assignment Method)</option>
+                <option value="learning_center">13) ศูนย์การเรียนรู้</option>
+                <option value="simulation">14) สถานการณ์จำลอง</option>
+                <option value="demonstration">15) สาธิต (Demonstration Method)</option>
+                <option value="theater">16) แสดงละคร</option>
+                <option value="discussion">17) อภิปราย (Discussion Method)</option>
+                <option value="inductive">18) อุปนัย: นักเรียนสังเกตและหาคำตอบ</option>
                 <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
             </select><br><br>
-
-            <label for="step1_technique">เทคนิค/กลยุทธการสอน:</label>
-            <select id="step1_technique" name="step1_technique">
-                <option value="recap">Recap: สะท้อนกลับ</option>
-                <option value="movement">การเคลื่อนไหว (Movement)</option>
-                <option value="focusing">การจุดรวมความสนใจ (Focusing)</option>
-                <option value="flipchart">การใช้ Flipchart</option>
-                <option value="powerpoint">การใช้ Power Point</option>
-                <option value="blackboard">การใช้กระดานดำ</option>
-                <option value="semantic">การใช้คำพูด (Semantic)</option>
-                <option value="problem_solving">การใช้โจทย์ปัญหา</option>
-                <option value="gesture">การใช้ท่าทางประกอบ (Gesture)</option>
-                <option value="situational">การใช้สถานการณ์</option>
-                <option value="model">การใช้หุ่นจำลอง</option>
-                <option value="focusing_words">การเน้นคำพูด (Focusing)</option>
-                <option value="changing_interaction">การเปลี่ยนแปลงแบบปฏิเสธสัมพันธ์ (Changing interaction)</option>
-                <option value="shifting_sensory">การแปรเปลี่ยนการรับสัมผัส (Shifting Sensory Charnels)</option>
-                <option value="attention_grabbing">การเร้าความสนใจ</option>
-                <option value="progress_encouragement">การเสริมกำลังใจด้วยการให้นักเรียนเห็นความก้าวหน้าของตน</option>
-                <option value="gesture_encouragement">การเสริมกำลังใจด้วยท่าทาง</option>
-                <option value="verbal_encouragement">การเสริมกำลังใจด้วยวาจา</option>
-                <option value="reward_encouragement">การเสริมกำลังด้วยการให้รางวัล</option>
-                <option value="visualization">การแสดงภาพ</option>
-                <option value="pausing">การหยุด (Pausing)</option>
-                <option value="silent_communication">การหยุด/การสื่อความเงียบ</option>
-                <option value="speech_pausing">การหยุดเว้นช่วงการพูด (Pausing)</option>
-                <option value="creative_questions">คำถามชวนคิดว่ามีอะไรแทนสิ่งที่มีอยู่</option>
-                <option value="change_questions">คำถามเพื่อคิดเปลี่ยนแปลง</option>
-                <option value="synthesis_questions">คำถามเพื่อคิดสังเคราะห์</option>
-                <option value="learning_questions">คำถามเพื่อชวนเรียนรู้</option>
-                <option value="connection_questions">คำถามเพื่อเชื่อมโยงกับเรื่องอื่น</option>
-                <option value="belief_modification">คำถามเพื่อดัดแปลงความเชื่อ</option>
-                <option value="belief_change">คำถามเพื่อเพื่อเปลี่ยนแปลงความเชื่อ</option>
-                <option value="provocative_questions">คำถามเพื่อยั่วยุ</option>
-                <option value="reduction_questions">คำถามเพื่อลดหรือตัดสิ่งที่มีอยู่</option>
-                <option value="swap_questions">คำถามสลับตำแหน่ง</option>
-                <option value="utility_questions">คำถามเอาไปใช้ประโยชน์อย่างอื่น</option>
-                <option value="questioning">ตั้งคำถาม</option>
-                <option value="review">ทวนความรู้เดิม</option>
-                <option value="lesson_boundary">แนะนำขอบเขตบทเรียน</option>
-                <option value="pause_speaking">พูดแล้วทิ้งช่วงให้เงียบ</option>
-                <option value="storytelling">เล่าเรื่อง</option>
-                <option value="problem_creation">สร้างประเด็นปัญหา</option>
-                <option value="life_stream">สายธารชีวิต</option>
-                <option value="guidance">อธิบายให้แนวทาง</option>
-                <option value="post_it">Post-It</option>
-                <option value="flipchart_paper">กระดาษ Flipchart</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-        <label for="step1_activity">กิจกรรมกระตุ้นผู้เรียน:</label>
-        <select id="step1_activity" name="step1_activity">
-            <option value="three_words">3 คำ ของวันนี้</option>
-            <option value="brain_gym">Brain Gym</option>
-            <option value="chair_game">เก้าอี้นี้อะไรก็ได้</option>
-            <option value="who_are_you">คุณเป็นใคร</option>
-            <option value="i_am_like">ฉันเปรียบได้กับ</option>
-            <option value="finger_ready">ชูนิ้ว วันนี้พร้อมระดับใด</option>
-            <option value="image_attention">ใช้ภาพสร้างความสนใจ</option>
-            <option value="massage">นวด</option>
-            <option value="recreation">นันทนาการ</option>
-            <option value="number_game">นับเลข 3-5-7</option>
-            <option value="drawing_topic">วาดรูปตามประเด็น</option>
-            <option value="multiplication_table">สูตรคูณแม่สอง</option>
-            <option value="multiplication_table">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-                   <label for="step1_classroom">การจัดห้องเรียน:</label>
-        <select id="step1_classroom" name="step1_classroom">
-            <option value="scattered">กระจายรอบห้อง</option>
-            <option value="small_group">กลุ่มย่อย</option>
-            <option value="brainstorm_group">กลุ่มระดมสมอง</option>
-            <option value="long_rows">จัดแถวแนวยาว</option>
-            <option value="group_rows">จัดแถวเป็นกลุ่ม</option>
-            <option value="stage">จัดห้องเป็นเวที</option>
-            <option value="pairing">จับคู่</option>
-            <option value="computer_use">ใช้คอมพิวเตอร์</option>
-            <option value="u_shape">ตัวยู</option>
-            <option value="lying_down">นอนราบกับพื้น</option>
-            <option value="circle">นั่งเป็นวงกลม</option>
-            <option value="interest_group">แบ่งกลุ่มตามความสนใจ</option>
-            <option value="ability_group">แบ่งกลุ่มตามความสามารถ</option>
-            <option value="normal_classroom">ห้องเรียนปกติ</option>
-            <option value="none">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_teacher_role">บทบาทผู้สอน:</label>
-<select id="step1_teacher_role" name="step1_teacher_role">
-    <option value="advising">Advising: การให้คำปรึกษา (แนวทาง/แนะนำ)</option>
-    <option value="coaching">Coaching: การฝึก/สอน ช่วยแก้ปัญหา</option>
-    <option value="consulting">Consulting: การให้คำปรึกษา (เนื้อหาเชิงลึก)</option>
-    <option value="counseling">Counseling: ให้คำปรึกษา (สร้างพลังใจ)</option>
-    <option value="facilitating">Facilitating: การอำนวยความสะดวก</option>
-    <option value="mentoring">Mentoring: การให้คำปรึกษา (พี่เลี้ยง/สอนงาน)</option>
-    <option value="teaching">Teaching: การสอนความรู้</option>
-    <option value="training">Training: การอบรมความรู้</option>
+           
+                <label for="step1_group_activity">กิจกรรมกลุ่ม:</label>
+<select id="step1_group_activity" name="step1_group_activity">
+    <option value="choice_mapping">1) Choice Mapping</option>
+    <option value="gallery_walk">2) Gallery Walk</option>
+    <option value="rc">3) RC: แปะโจทย์หาคำตอบ</option>
+    <option value="stad">4) STAD</option>
+    <option value="tai">5) TAI</option>
+    <option value="tgt">6) TGT</option>
+    <option value="think_pair_share">7) Think-Pair-Share</option>
+    <option value="timeline">8) Timeline: เรียงลำดับ</option>
+    <option value="why_why_diagram">9) Why Why Diagram</option>
+    <option value="world_cafe">10) World Café</option>
+    <option value="yes_no">11) Yes หรือ No</option>
+    <option value="game_show">12) เกมส์โชว์: ทายคำ</option>
+    <option value="guess_word">13) เกมส์ใบ้คำ</option>
+    <option value="guess_picture">14) เกมส์ใบ้ภาพ</option>
+    <option value="cross_line">15) ข้ามเส้น</option>
+    <option value="write_to_task">16) เขียนตามโจทย์</option>
+    <option value="research">17) ค้นคว้าข้อมูล</option>
+    <option value="video_clip">18) คลิปวีดีโอ</option>
+    <option value="creative_thinking">19) คิดสร้างสรรค์</option>
+    <option value="matching_words">20) จับคู่คำ</option>
+    <option value="jigsaw">21) จิ๊กซอ</option>
+    <option value="imagination">22) จินตนาการ</option>
+    <option value="stand_decision">23) จุดยืน: ตัดสินใจตามสิ่งที่คิด</option>
+    <option value="syndoku">24) ชินโดกุ (Syncronicity)</option>
+    <option value="use_phone">25) ใช้โทรศัพท์หรือแทปเล็ต</option>
+    <option value="use_nearby_objects">26) ใช้วัตถุหรือสิ่งของใกล้ตัว</option>
+    <option value="knowledge_market">27) ตลาดนัดความรู้</option>
+    <option value="nine_square_table">28) ตาราง 9 ช่อง</option>
+    <option value="create_song">29) แต่งเพลงจากโจทย์</option>
+    <option value="debate">30) ถกเถียง</option>
+    <option value="throw_dice">31) ทอดลูกเต๋า</option>
+    <option value="board_game">32) บอร์ดเกมส์</option>
+    <option value="snake_ladder">33) บันไดงู</option>
+    <option value="bingo">34) บิงโก</option>
+    <option value="sensory">35) ประสาทสัมผัส</option>
+    <option value="comparison">36) เปรียบเทียบ</option>
+    <option value="rock_paper_scissors">37) เป่า ยิง ฉุบ</option>
+    <option value="flip_card">38) เปิดแผ่นป้าย</option>
+    <option value="venn_diagram">39) แผนภาพเวนน์: งานที่ควรทำ</option>
+    <option value="leaf_story">40) พลังใบ: นำใบไม้มาเรียงเล่าเรื่อง</option>
+    <option value="incomplete_task">41) พิจารณาสิ่งที่ไม่สมบูรณ์</option>
+    <option value="post_it">42) โพสอิท</option>
+    <option value="short_movie">43) ภาพยนต์สั้น</option>
+    <option value="line_connecting">44) โยงเส้น</option>
+    <option value="brainstorm">45) ระดมสมอง (Brainstorm)</option>
+    <option value="storytelling">46) เล่านิทาน</option>
+    <option value="running_answer">47) วิ่งหาคำตอบ</option>
+    <option value="create_project">48) สร้างชิ้นงาน</option>
+    <option value="individual_reflection">49) สะท้อนเป็นรายบุคคล</option>
+    <option value="dialogue">50) สุนทรียสนทนา</option>
+    <option value="six_hats">51) หมวก 6 ใบ</option>
+    <option value="card_picking">52) หยิบไพ่</option>
+    <option value="design_product">53) ออกแบบผลิตภัณฑ์</option>
+    <option value="read_statistics">54) อ่านข้อมูลสถิติ</option>
+    <option value="innetka_speed">55) อินเนทก้า: เรียงตาม Speed</option>
+    <option value="none">ไม่มี</option>
 </select>
+<br><br>
 
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_notes">บรรยาย:</label>
-            <textarea id="step1_notes" name="step1_notes"></textarea><br><br>
-
-            <!-- Repeat similar structure for steps 2-6 -->
-        </div>
-<div id="teaching_steps">
-        <div id="teaching_steps">
-            <h4>ขั้นตอนที 2 <input type="text" id="objective" name="objective" required><br><br>
-           <label for="step1_method">วิธีการสอน:</label>
-            <select id="step1_method" name="step1_method">
-            <option value="case_study">กรณีศึกษา (Case Study Method)</option>
-            <option value="socratic">โซคราติส (Socratic Method)</option>
-            <option value="laboratory">ทดลอง (Laboratory Method)</option>
-            <option value="tutoring">ทบทวน (Tutoring Method)</option>
-            <option value="field_trip">ทัศนศึกษา</option>
-            <option value="deductive">นิรนัย: ครูหลักการ นักเรียนพิสูจน์</option>
-            <option value="role_play">บทบาทสมมุติ (Role Play)</option>
-            <option value="lecture">บรรยาย (Lecturing Method)</option>
-            <option value="group_problem_solving">แบ่งกลุ่มแก้ปัญหา (Syndicate Method)</option>
-            <option value="performance">ปฏิบัติ (Performance Method)</option>
-            <option value="sensory">ประสาทสัมผัส</option>
-            <option value="study_assignment">มอบหมายงาน (Study Assignment Method)</option>
-            <option value="learning_center">ศูนย์การเรียนรู้</option>
-            <option value="simulation">สถานการณ์จำลอง</option>
-            <option value="demonstration">สาธิต (Demonstration Method)</option>
-            <option value="drama">แสดงละคร</option>
-            <option value="discussion">อภิปราย (Discussion Method)</option>
-            <option value="inductive">อุปนัย: นักเรียนสังเกตและหาคำตอบ</option>
-            <option value="none">ไม่มี</option>
-         <!-- Additional options omitted for brevity -->
-         
-            </select><br><br>
-            <label for="step1_group_activity">กิจกรรมกลุ่ม:</label>
-            <select id="step1_group_activity" name="step1_group_activity">
-                <option value="choice_mapping">Choice Mapping</option>
-                <option value="gallery_walk">Gallery Walk</option>
-                <option value="rc">RC: แปะโจทย์หาคำตอบ</option>
-                <option value="stad">STAD</option>
-                <option value="tai">TAI</option>
-                <option value="tgt">TGT</option>
-                <option value="think_pair_share">Think-Pair-Share</option>
-                <option value="timeline">Timeline: เรียงลำดับ</option>
-                <option value="why_why_diagram">Why Why Diagram</option>
-                <option value="world_cafe">World Café</option>
-                <option value="yes_no">Yes หรือ No</option>
-                <option value="game_show">เกมส์โชว์: ทายคำ</option>
-                <option value="charades">เกมส์ใบ้คำ</option>
-                <option value="pictionary">เกมส์ใบ้ภาพ</option>
-                <option value="cross_the_line">ข้ามเส้น</option>
-                <option value="write_assignment">เขียนตามโจทย์</option>
-                <option value="research">ค้นคว้าข้อมูล</option>
-                <option value="video_clip">คลิปวีดีโอ</option>
-                <option value="creative_thinking">คิดสร้างสรรค์</option>
-                <option value="matching">จับคู่คำ</option>
-                <option value="jigsaw">จิ๊กซอ</option>
-                <option value="imagination">จินตนาการ</option>
-                <option value="stance">จุดยืน: ตัดสินใจตามสิ่งที่คิด</option>
-                <option value="shindoku">ชินโดกุ (Syncronicity)</option>
-                <option value="use_devices">ใช้โทรศัพท์หรือแทปเล็ต</option>
-                <option value="use_objects">ใช้วัตถุหรือสิ่งของใกล้ตัว</option>
-                <option value="knowledge_market">ตลาดนัดความรู้</option>
-                <option value="nine_square">ตาราง 9 ช่อง</option>
-                <option value="songwriting">แต่งเพลงจากโจทย์</option>
-                <option value="debate">ถกเถียง</option>
-                <option value="dice_game">ทอดลูกเต๋า</option>
-                <option value="board_game">บอร์ดเกมส์</option>
-                <option value="snake_ladder">บันไดงู</option>
-                <option value="bingo">บิงโก</option>
-                <option value="sensory">ประสาทสัมผัส</option>
-                <option value="comparison">เปรียบเทียบ</option>
-                <option value="rock_paper_scissors">เป่า ยิง ฉุบ</option>
-                <option value="flip_cards">เปิดแผ่นป้าย</option>
-                <option value="venn_diagram">แผนภาพเวนน์: งานที่ควรทำ</option>
-                <option value="leaf_power">พลังใบ: นำใบไม้มาเรียงเล่าเรื่อง</option>
-                <option value="evaluate_incomplete">พิจารณาสิ่งที่ไม่สมบูรณ์</option>
-                <option value="post_it">โพสอิท</option>
-                <option value="short_film">ภาพยนต์สั้น</option>
-                <option value="line_drawing">โยงเส้น</option>
-                <option value="brainstorm">ระดมสมอง (Brainstorm)</option>
-                <option value="storytelling">เล่านิทาน</option>
-                <option value="answer_hunt">วิ่งหาคำตอบ</option>
-                <option value="create_project">สร้างชิ้นงาน</option>
-                <option value="individual_reflection">สะท้อนเป็นรายบุคคล</option>
-                <option value="dialogue">สุนทรียสนทนา</option>
-                <option value="six_hats">หมวก 6 ใบ</option>
-                <option value="pick_card">หยิบไพ่</option>
-                <option value="product_design">ออกแบบผลิตภัณฑ์</option>
-                <option value="read_stats">อ่านข้อมูลสถิติ</option>
-                <option value="innetka">อินเนทก้า: เรียงตาม Speed</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_technique">เทคนิค/กลยุทธการสอน:</label>
-            <select id="step1_technique" name="step1_technique">
-                <option value="recap">Recap: สะท้อนกลับ</option>
-                <option value="movement">การเคลื่อนไหว (Movement)</option>
-                <option value="focusing">การจุดรวมความสนใจ (Focusing)</option>
-                <option value="flipchart">การใช้ Flipchart</option>
-                <option value="powerpoint">การใช้ Power Point</option>
-                <option value="blackboard">การใช้กระดานดำ</option>
-                <option value="semantic">การใช้คำพูด (Semantic)</option>
-                <option value="problem_solving">การใช้โจทย์ปัญหา</option>
-                <option value="gesture">การใช้ท่าทางประกอบ (Gesture)</option>
-                <option value="situational">การใช้สถานการณ์</option>
-                <option value="model">การใช้หุ่นจำลอง</option>
-                <option value="focusing_words">การเน้นคำพูด (Focusing)</option>
-                <option value="changing_interaction">การเปลี่ยนแปลงแบบปฏิเสธสัมพันธ์ (Changing interaction)</option>
-                <option value="shifting_sensory">การแปรเปลี่ยนการรับสัมผัส (Shifting Sensory Charnels)</option>
-                <option value="attention_grabbing">การเร้าความสนใจ</option>
-                <option value="progress_encouragement">การเสริมกำลังใจด้วยการให้นักเรียนเห็นความก้าวหน้าของตน</option>
-                <option value="gesture_encouragement">การเสริมกำลังใจด้วยท่าทาง</option>
-                <option value="verbal_encouragement">การเสริมกำลังใจด้วยวาจา</option>
-                <option value="reward_encouragement">การเสริมกำลังด้วยการให้รางวัล</option>
-                <option value="visualization">การแสดงภาพ</option>
-                <option value="pausing">การหยุด (Pausing)</option>
-                <option value="silent_communication">การหยุด/การสื่อความเงียบ</option>
-                <option value="speech_pausing">การหยุดเว้นช่วงการพูด (Pausing)</option>
-                <option value="creative_questions">คำถามชวนคิดว่ามีอะไรแทนสิ่งที่มีอยู่</option>
-                <option value="change_questions">คำถามเพื่อคิดเปลี่ยนแปลง</option>
-                <option value="synthesis_questions">คำถามเพื่อคิดสังเคราะห์</option>
-                <option value="learning_questions">คำถามเพื่อชวนเรียนรู้</option>
-                <option value="connection_questions">คำถามเพื่อเชื่อมโยงกับเรื่องอื่น</option>
-                <option value="belief_modification">คำถามเพื่อดัดแปลงความเชื่อ</option>
-                <option value="belief_change">คำถามเพื่อเพื่อเปลี่ยนแปลงความเชื่อ</option>
-                <option value="provocative_questions">คำถามเพื่อยั่วยุ</option>
-                <option value="reduction_questions">คำถามเพื่อลดหรือตัดสิ่งที่มีอยู่</option>
-                <option value="swap_questions">คำถามสลับตำแหน่ง</option>
-                <option value="utility_questions">คำถามเอาไปใช้ประโยชน์อย่างอื่น</option>
-                <option value="questioning">ตั้งคำถาม</option>
-                <option value="review">ทวนความรู้เดิม</option>
-                <option value="lesson_boundary">แนะนำขอบเขตบทเรียน</option>
-                <option value="pause_speaking">พูดแล้วทิ้งช่วงให้เงียบ</option>
-                <option value="storytelling">เล่าเรื่อง</option>
-                <option value="problem_creation">สร้างประเด็นปัญหา</option>
-                <option value="life_stream">สายธารชีวิต</option>
-                <option value="guidance">อธิบายให้แนวทาง</option>
-                <option value="post_it">Post-It</option>
-                <option value="flipchart_paper">กระดาษ Flipchart</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-        <label for="step1_activity">กิจกรรมกระตุ้นผู้เรียน:</label>
-        <select id="step1_activity" name="step1_activity">
-            <option value="three_words">3 คำ ของวันนี้</option>
-            <option value="brain_gym">Brain Gym</option>
-            <option value="chair_game">เก้าอี้นี้อะไรก็ได้</option>
-            <option value="who_are_you">คุณเป็นใคร</option>
-            <option value="i_am_like">ฉันเปรียบได้กับ</option>
-            <option value="finger_ready">ชูนิ้ว วันนี้พร้อมระดับใด</option>
-            <option value="image_attention">ใช้ภาพสร้างความสนใจ</option>
-            <option value="massage">นวด</option>
-            <option value="recreation">นันทนาการ</option>
-            <option value="number_game">นับเลข 3-5-7</option>
-            <option value="drawing_topic">วาดรูปตามประเด็น</option>
-            <option value="multiplication_table">สูตรคูณแม่สอง</option>
-            <option value="multiplication_table">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-                   <label for="step1_classroom">การจัดห้องเรียน:</label>
-        <select id="step1_classroom" name="step1_classroom">
-            <option value="scattered">กระจายรอบห้อง</option>
-            <option value="small_group">กลุ่มย่อย</option>
-            <option value="brainstorm_group">กลุ่มระดมสมอง</option>
-            <option value="long_rows">จัดแถวแนวยาว</option>
-            <option value="group_rows">จัดแถวเป็นกลุ่ม</option>
-            <option value="stage">จัดห้องเป็นเวที</option>
-            <option value="pairing">จับคู่</option>
-            <option value="computer_use">ใช้คอมพิวเตอร์</option>
-            <option value="u_shape">ตัวยู</option>
-            <option value="lying_down">นอนราบกับพื้น</option>
-            <option value="circle">นั่งเป็นวงกลม</option>
-            <option value="interest_group">แบ่งกลุ่มตามความสนใจ</option>
-            <option value="ability_group">แบ่งกลุ่มตามความสามารถ</option>
-            <option value="normal_classroom">ห้องเรียนปกติ</option>
-            <option value="none">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_teacher_role">บทบาทผู้สอน:</label>
-<select id="step1_teacher_role" name="step1_teacher_role">
-    <option value="advising">Advising: การให้คำปรึกษา (แนวทาง/แนะนำ)</option>
-    <option value="coaching">Coaching: การฝึก/สอน ช่วยแก้ปัญหา</option>
-    <option value="consulting">Consulting: การให้คำปรึกษา (เนื้อหาเชิงลึก)</option>
-    <option value="counseling">Counseling: ให้คำปรึกษา (สร้างพลังใจ)</option>
-    <option value="facilitating">Facilitating: การอำนวยความสะดวก</option>
-    <option value="mentoring">Mentoring: การให้คำปรึกษา (พี่เลี้ยง/สอนงาน)</option>
-    <option value="teaching">Teaching: การสอนความรู้</option>
-    <option value="training">Training: การอบรมความรู้</option>
+              <label for="step${stepCount}_technique">เทคนิค/กลยุทธ์การสอน:</label>
+<select id="step${stepCount}_technique" name="step${stepCount}_technique">
+    <option value="recap">1) Recap: สะท้อนกลับ</option>
+    <option value="movement">2) การเคลื่อนไหว (Movement)</option>
+    <option value="focusing">3) การจุดรวมความสนใจ (Focusing)</option>
+    <option value="flipchart">4) การใช้ Flipchart</option>
+    <option value="powerpoint">5) การใช้ Power Point</option>
+    <option value="blackboard">6) การใช้กระดานดำ</option>
+    <option value="semantic">7) การใช้คำพูด (Semantic)</option>
+    <option value="problem_solving">8) การใช้โจทย์ปัญหา</option>
+    <option value="gesture">9) การใช้ท่าทางประกอบ (Gesture)</option>
+    <option value="situational">10) การใช้สถานการณ์</option>
+    <option value="model">11) การใช้หุ่นจำลอง</option>
+    <option value="verbal_focus">12) การเน้นคำพูด (Focusing)</option>
+    <option value="changing_interaction">13) การเปลี่ยนแปลงแบบปฏิเสธสัมพันธ์ (Changing Interaction)</option>
+    <option value="sensory_shift">14) การแปรเปลี่ยนการรับสัมผัส (Shifting Sensory Channels)</option>
+    <option value="attention_stimulation">15) การเร้าความสนใจ</option>
+    <option value="progress_encouragement">16) การเสริมกำลังใจด้วยการให้นักเรียนเห็นความก้าวหน้าของตน</option>
+    <option value="gesture_encouragement">17) การเสริมกำลังใจด้วยท่าทาง</option>
+    <option value="verbal_encouragement">18) การเสริมกำลังใจด้วยวาจา</option>
+    <option value="reward_encouragement">19) การเสริมกำลังด้วยการให้รางวัล</option>
+    <option value="visualization">20) การแสดงภาพ</option>
+    <option value="pausing">21) การหยุด (Pausing)</option>
+    <option value="silent_communication">22) การหยุด/การสื่อความเงียบ</option>
+    <option value="speech_pause">23) การหยุดเว้นช่วงการพูด (Pausing)</option>
+    <option value="creative_questioning">24) คำถามชวนคิดว่ามีอะไรแทนสิ่งที่มีอยู่</option>
+    <option value="transformational_questioning">25) คำถามเพื่อคิดเปลี่ยนแปลง</option>
+    <option value="synthetic_questioning">26) คำถามเพื่อคิดสังเคราะห์</option>
+    <option value="learning_questioning">27) คำถามเพื่อชวนเรียนรู้</option>
+    <option value="linking_questioning">28) คำถามเพื่อเชื่อมโยงกับเรื่องอื่น</option>
+    <option value="belief_modification">29) คำถามเพื่อดัดแปลงความเชื่อ</option>
+    <option value="belief_change">30) คำถามเพื่อเปลี่ยนแปลงความเชื่อ</option>
+    <option value="provocative_questioning">31) คำถามเพื่อยั่วยุ</option>
+    <option value="reducing_questioning">32) คำถามเพื่อลดหรือตัดสิ่งที่มีอยู่</option>
+    <option value="role_swapping_questioning">33) คำถามสลับตำแหน่ง</option>
+    <option value="alternative_application">34) คำถามเอาไปใช้ประโยชน์อย่างอื่น</option>
+    <option value="questioning">35) ตั้งคำถาม</option>
+    <option value="review_previous_knowledge">36) ทวนความรู้เดิม</option>
+    <option value="lesson_scope">37) แนะนำขอบเขตบทเรียน</option>
+    <option value="silent_pause">38) พูดแล้วทิ้งช่วงให้เงียบ</option>
+    <option value="storytelling">39) เล่าเรื่อง</option>
+    <option value="problem_creation">40) สร้างประเด็นปัญหา</option>
+    <option value="life_stream">41) สายธารชีวิต</option>
+    <option value="guidance">42) อธิบายให้แนวทาง</option>
+    <option value="post_it">43) Post-It</option>
+    <option value="flipchart_paper">44) กระดาษ Flipchart</option>
+    <option value="none">ไม่มี</option>
 </select>
-
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_notes">บรรยาย:</label>
-            <textarea id="step1_notes" name="step1_notes"></textarea><br><br>
-
-            <!-- Repeat similar structure for steps 2-6 -->
-        </div>
-<div id="teaching_steps">
-        <div id="teaching_steps">
-            <h4>ขั้นตอนที่ 3 <input type="text" id="objective" name="objective" required><br><br>
-     <label for="step1_method">วิธีการสอน:</label>
-            <select id="step1_method" name="step1_method">
-            <option value="case_study">กรณีศึกษา (Case Study Method)</option>
-            <option value="socratic">โซคราติส (Socratic Method)</option>
-            <option value="laboratory">ทดลอง (Laboratory Method)</option>
-            <option value="tutoring">ทบทวน (Tutoring Method)</option>
-            <option value="field_trip">ทัศนศึกษา</option>
-            <option value="deductive">นิรนัย: ครูหลักการ นักเรียนพิสูจน์</option>
-            <option value="role_play">บทบาทสมมุติ (Role Play)</option>
-            <option value="lecture">บรรยาย (Lecturing Method)</option>
-            <option value="group_problem_solving">แบ่งกลุ่มแก้ปัญหา (Syndicate Method)</option>
-            <option value="performance">ปฏิบัติ (Performance Method)</option>
-            <option value="sensory">ประสาทสัมผัส</option>
-            <option value="study_assignment">มอบหมายงาน (Study Assignment Method)</option>
-            <option value="learning_center">ศูนย์การเรียนรู้</option>
-            <option value="simulation">สถานการณ์จำลอง</option>
-            <option value="demonstration">สาธิต (Demonstration Method)</option>
-            <option value="drama">แสดงละคร</option>
-            <option value="discussion">อภิปราย (Discussion Method)</option>
-            <option value="inductive">อุปนัย: นักเรียนสังเกตและหาคำตอบ</option>
-            <option value="none">ไม่มี</option>
-         <!-- Additional options omitted for brevity -->
-         
-            </select><br><br>
-            <label for="step1_group_activity">กิจกรรมกลุ่ม:</label>
-            <select id="step1_group_activity" name="step1_group_activity">
-                <option value="choice_mapping">Choice Mapping</option>
-                <option value="gallery_walk">Gallery Walk</option>
-                <option value="rc">RC: แปะโจทย์หาคำตอบ</option>
-                <option value="stad">STAD</option>
-                <option value="tai">TAI</option>
-                <option value="tgt">TGT</option>
-                <option value="think_pair_share">Think-Pair-Share</option>
-                <option value="timeline">Timeline: เรียงลำดับ</option>
-                <option value="why_why_diagram">Why Why Diagram</option>
-                <option value="world_cafe">World Café</option>
-                <option value="yes_no">Yes หรือ No</option>
-                <option value="game_show">เกมส์โชว์: ทายคำ</option>
-                <option value="charades">เกมส์ใบ้คำ</option>
-                <option value="pictionary">เกมส์ใบ้ภาพ</option>
-                <option value="cross_the_line">ข้ามเส้น</option>
-                <option value="write_assignment">เขียนตามโจทย์</option>
-                <option value="research">ค้นคว้าข้อมูล</option>
-                <option value="video_clip">คลิปวีดีโอ</option>
-                <option value="creative_thinking">คิดสร้างสรรค์</option>
-                <option value="matching">จับคู่คำ</option>
-                <option value="jigsaw">จิ๊กซอ</option>
-                <option value="imagination">จินตนาการ</option>
-                <option value="stance">จุดยืน: ตัดสินใจตามสิ่งที่คิด</option>
-                <option value="shindoku">ชินโดกุ (Syncronicity)</option>
-                <option value="use_devices">ใช้โทรศัพท์หรือแทปเล็ต</option>
-                <option value="use_objects">ใช้วัตถุหรือสิ่งของใกล้ตัว</option>
-                <option value="knowledge_market">ตลาดนัดความรู้</option>
-                <option value="nine_square">ตาราง 9 ช่อง</option>
-                <option value="songwriting">แต่งเพลงจากโจทย์</option>
-                <option value="debate">ถกเถียง</option>
-                <option value="dice_game">ทอดลูกเต๋า</option>
-                <option value="board_game">บอร์ดเกมส์</option>
-                <option value="snake_ladder">บันไดงู</option>
-                <option value="bingo">บิงโก</option>
-                <option value="sensory">ประสาทสัมผัส</option>
-                <option value="comparison">เปรียบเทียบ</option>
-                <option value="rock_paper_scissors">เป่า ยิง ฉุบ</option>
-                <option value="flip_cards">เปิดแผ่นป้าย</option>
-                <option value="venn_diagram">แผนภาพเวนน์: งานที่ควรทำ</option>
-                <option value="leaf_power">พลังใบ: นำใบไม้มาเรียงเล่าเรื่อง</option>
-                <option value="evaluate_incomplete">พิจารณาสิ่งที่ไม่สมบูรณ์</option>
-                <option value="post_it">โพสอิท</option>
-                <option value="short_film">ภาพยนต์สั้น</option>
-                <option value="line_drawing">โยงเส้น</option>
-                <option value="brainstorm">ระดมสมอง (Brainstorm)</option>
-                <option value="storytelling">เล่านิทาน</option>
-                <option value="answer_hunt">วิ่งหาคำตอบ</option>
-                <option value="create_project">สร้างชิ้นงาน</option>
-                <option value="individual_reflection">สะท้อนเป็นรายบุคคล</option>
-                <option value="dialogue">สุนทรียสนทนา</option>
-                <option value="six_hats">หมวก 6 ใบ</option>
-                <option value="pick_card">หยิบไพ่</option>
-                <option value="product_design">ออกแบบผลิตภัณฑ์</option>
-                <option value="read_stats">อ่านข้อมูลสถิติ</option>
-                <option value="innetka">อินเนทก้า: เรียงตาม Speed</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_technique">เทคนิค/กลยุทธการสอน:</label>
-            <select id="step1_technique" name="step1_technique">
-                <option value="recap">Recap: สะท้อนกลับ</option>
-                <option value="movement">การเคลื่อนไหว (Movement)</option>
-                <option value="focusing">การจุดรวมความสนใจ (Focusing)</option>
-                <option value="flipchart">การใช้ Flipchart</option>
-                <option value="powerpoint">การใช้ Power Point</option>
-                <option value="blackboard">การใช้กระดานดำ</option>
-                <option value="semantic">การใช้คำพูด (Semantic)</option>
-                <option value="problem_solving">การใช้โจทย์ปัญหา</option>
-                <option value="gesture">การใช้ท่าทางประกอบ (Gesture)</option>
-                <option value="situational">การใช้สถานการณ์</option>
-                <option value="model">การใช้หุ่นจำลอง</option>
-                <option value="focusing_words">การเน้นคำพูด (Focusing)</option>
-                <option value="changing_interaction">การเปลี่ยนแปลงแบบปฏิเสธสัมพันธ์ (Changing interaction)</option>
-                <option value="shifting_sensory">การแปรเปลี่ยนการรับสัมผัส (Shifting Sensory Charnels)</option>
-                <option value="attention_grabbing">การเร้าความสนใจ</option>
-                <option value="progress_encouragement">การเสริมกำลังใจด้วยการให้นักเรียนเห็นความก้าวหน้าของตน</option>
-                <option value="gesture_encouragement">การเสริมกำลังใจด้วยท่าทาง</option>
-                <option value="verbal_encouragement">การเสริมกำลังใจด้วยวาจา</option>
-                <option value="reward_encouragement">การเสริมกำลังด้วยการให้รางวัล</option>
-                <option value="visualization">การแสดงภาพ</option>
-                <option value="pausing">การหยุด (Pausing)</option>
-                <option value="silent_communication">การหยุด/การสื่อความเงียบ</option>
-                <option value="speech_pausing">การหยุดเว้นช่วงการพูด (Pausing)</option>
-                <option value="creative_questions">คำถามชวนคิดว่ามีอะไรแทนสิ่งที่มีอยู่</option>
-                <option value="change_questions">คำถามเพื่อคิดเปลี่ยนแปลง</option>
-                <option value="synthesis_questions">คำถามเพื่อคิดสังเคราะห์</option>
-                <option value="learning_questions">คำถามเพื่อชวนเรียนรู้</option>
-                <option value="connection_questions">คำถามเพื่อเชื่อมโยงกับเรื่องอื่น</option>
-                <option value="belief_modification">คำถามเพื่อดัดแปลงความเชื่อ</option>
-                <option value="belief_change">คำถามเพื่อเพื่อเปลี่ยนแปลงความเชื่อ</option>
-                <option value="provocative_questions">คำถามเพื่อยั่วยุ</option>
-                <option value="reduction_questions">คำถามเพื่อลดหรือตัดสิ่งที่มีอยู่</option>
-                <option value="swap_questions">คำถามสลับตำแหน่ง</option>
-                <option value="utility_questions">คำถามเอาไปใช้ประโยชน์อย่างอื่น</option>
-                <option value="questioning">ตั้งคำถาม</option>
-                <option value="review">ทวนความรู้เดิม</option>
-                <option value="lesson_boundary">แนะนำขอบเขตบทเรียน</option>
-                <option value="pause_speaking">พูดแล้วทิ้งช่วงให้เงียบ</option>
-                <option value="storytelling">เล่าเรื่อง</option>
-                <option value="problem_creation">สร้างประเด็นปัญหา</option>
-                <option value="life_stream">สายธารชีวิต</option>
-                <option value="guidance">อธิบายให้แนวทาง</option>
-                <option value="post_it">Post-It</option>
-                <option value="flipchart_paper">กระดาษ Flipchart</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-        <label for="step1_activity">กิจกรรมกระตุ้นผู้เรียน:</label>
-        <select id="step1_activity" name="step1_activity">
-            <option value="three_words">3 คำ ของวันนี้</option>
-            <option value="brain_gym">Brain Gym</option>
-            <option value="chair_game">เก้าอี้นี้อะไรก็ได้</option>
-            <option value="who_are_you">คุณเป็นใคร</option>
-            <option value="i_am_like">ฉันเปรียบได้กับ</option>
-            <option value="finger_ready">ชูนิ้ว วันนี้พร้อมระดับใด</option>
-            <option value="image_attention">ใช้ภาพสร้างความสนใจ</option>
-            <option value="massage">นวด</option>
-            <option value="recreation">นันทนาการ</option>
-            <option value="number_game">นับเลข 3-5-7</option>
-            <option value="drawing_topic">วาดรูปตามประเด็น</option>
-            <option value="multiplication_table">สูตรคูณแม่สอง</option>
-            <option value="multiplication_table">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-                   <label for="step1_classroom">การจัดห้องเรียน:</label>
-        <select id="step1_classroom" name="step1_classroom">
-            <option value="scattered">กระจายรอบห้อง</option>
-            <option value="small_group">กลุ่มย่อย</option>
-            <option value="brainstorm_group">กลุ่มระดมสมอง</option>
-            <option value="long_rows">จัดแถวแนวยาว</option>
-            <option value="group_rows">จัดแถวเป็นกลุ่ม</option>
-            <option value="stage">จัดห้องเป็นเวที</option>
-            <option value="pairing">จับคู่</option>
-            <option value="computer_use">ใช้คอมพิวเตอร์</option>
-            <option value="u_shape">ตัวยู</option>
-            <option value="lying_down">นอนราบกับพื้น</option>
-            <option value="circle">นั่งเป็นวงกลม</option>
-            <option value="interest_group">แบ่งกลุ่มตามความสนใจ</option>
-            <option value="ability_group">แบ่งกลุ่มตามความสามารถ</option>
-            <option value="normal_classroom">ห้องเรียนปกติ</option>
-            <option value="none">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_teacher_role">บทบาทผู้สอน:</label>
-<select id="step1_teacher_role" name="step1_teacher_role">
-    <option value="advising">Advising: การให้คำปรึกษา (แนวทาง/แนะนำ)</option>
-    <option value="coaching">Coaching: การฝึก/สอน ช่วยแก้ปัญหา</option>
-    <option value="consulting">Consulting: การให้คำปรึกษา (เนื้อหาเชิงลึก)</option>
-    <option value="counseling">Counseling: ให้คำปรึกษา (สร้างพลังใจ)</option>
-    <option value="facilitating">Facilitating: การอำนวยความสะดวก</option>
-    <option value="mentoring">Mentoring: การให้คำปรึกษา (พี่เลี้ยง/สอนงาน)</option>
-    <option value="teaching">Teaching: การสอนความรู้</option>
-    <option value="training">Training: การอบรมความรู้</option>
+<br><br>
+<label for="step${stepCount}_activity">กิจกรรมกระตุ้นผู้เรียน:</label>
+<select id="step${stepCount}_activity" name="step${stepCount}_activity">
+    <option value="three_words_today">1) 3 คำ ของวันนี้</option>
+    <option value="brain_gym">2) Brain Gym</option>
+    <option value="anything_chair">3) เก้าอี้นี้อะไรก็ได้</option>
+    <option value="who_are_you">4) คุณเป็นใคร</option>
+    <option value="i_am_like">5) ฉันเปรียบได้กับ</option>
+    <option value="hand_up_ready">6) ชูนิ้ว วันนี้พร้อมระดับใด</option>
+    <option value="picture_attention">7) ใช้ภาพสร้างความสนใจ</option>
+    <option value="massage">8) นวด</option>
+    <option value="recreation">9) นันทนาการ</option>
+    <option value="count_3_5_7">10) นับเลข 3-5-7</option>
+    <option value="draw_topic">11) วาดรูปตามประเด็น</option>
+    <option value="multiplication_table_2">12) สูตรคูณแม่สอง</option>
+     <option value="multiplication_table_2">ไม่มี</option>
 </select>
-
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_notes">บรรยาย:</label>
-            <textarea id="step1_notes" name="step1_notes"></textarea><br><br>
-
-            <!-- Repeat similar structure for steps 2-6 -->
-        </div>
-<div id="teaching_steps">
-        <div id="teaching_steps">
-    
-            <h4>ขั้นตอนที 4 <input type="text" id="objective" name="objective" required><br><br>
-             <label for="step1_method">วิธีการสอน:</label>
-            <select id="step1_method" name="step1_method">
-            <option value="case_study">กรณีศึกษา (Case Study Method)</option>
-            <option value="socratic">โซคราติส (Socratic Method)</option>
-            <option value="laboratory">ทดลอง (Laboratory Method)</option>
-            <option value="tutoring">ทบทวน (Tutoring Method)</option>
-            <option value="field_trip">ทัศนศึกษา</option>
-            <option value="deductive">นิรนัย: ครูหลักการ นักเรียนพิสูจน์</option>
-            <option value="role_play">บทบาทสมมุติ (Role Play)</option>
-            <option value="lecture">บรรยาย (Lecturing Method)</option>
-            <option value="group_problem_solving">แบ่งกลุ่มแก้ปัญหา (Syndicate Method)</option>
-            <option value="performance">ปฏิบัติ (Performance Method)</option>
-            <option value="sensory">ประสาทสัมผัส</option>
-            <option value="study_assignment">มอบหมายงาน (Study Assignment Method)</option>
-            <option value="learning_center">ศูนย์การเรียนรู้</option>
-            <option value="simulation">สถานการณ์จำลอง</option>
-            <option value="demonstration">สาธิต (Demonstration Method)</option>
-            <option value="drama">แสดงละคร</option>
-            <option value="discussion">อภิปราย (Discussion Method)</option>
-            <option value="inductive">อุปนัย: นักเรียนสังเกตและหาคำตอบ</option>
-            <option value="none">ไม่มี</option>
-         <!-- Additional options omitted for brevity -->
-         
-            </select><br><br>
-            <label for="step1_group_activity">กิจกรรมกลุ่ม:</label>
-            <select id="step1_group_activity" name="step1_group_activity">
-                <option value="choice_mapping">Choice Mapping</option>
-                <option value="gallery_walk">Gallery Walk</option>
-                <option value="rc">RC: แปะโจทย์หาคำตอบ</option>
-                <option value="stad">STAD</option>
-                <option value="tai">TAI</option>
-                <option value="tgt">TGT</option>
-                <option value="think_pair_share">Think-Pair-Share</option>
-                <option value="timeline">Timeline: เรียงลำดับ</option>
-                <option value="why_why_diagram">Why Why Diagram</option>
-                <option value="world_cafe">World Café</option>
-                <option value="yes_no">Yes หรือ No</option>
-                <option value="game_show">เกมส์โชว์: ทายคำ</option>
-                <option value="charades">เกมส์ใบ้คำ</option>
-                <option value="pictionary">เกมส์ใบ้ภาพ</option>
-                <option value="cross_the_line">ข้ามเส้น</option>
-                <option value="write_assignment">เขียนตามโจทย์</option>
-                <option value="research">ค้นคว้าข้อมูล</option>
-                <option value="video_clip">คลิปวีดีโอ</option>
-                <option value="creative_thinking">คิดสร้างสรรค์</option>
-                <option value="matching">จับคู่คำ</option>
-                <option value="jigsaw">จิ๊กซอ</option>
-                <option value="imagination">จินตนาการ</option>
-                <option value="stance">จุดยืน: ตัดสินใจตามสิ่งที่คิด</option>
-                <option value="shindoku">ชินโดกุ (Syncronicity)</option>
-                <option value="use_devices">ใช้โทรศัพท์หรือแทปเล็ต</option>
-                <option value="use_objects">ใช้วัตถุหรือสิ่งของใกล้ตัว</option>
-                <option value="knowledge_market">ตลาดนัดความรู้</option>
-                <option value="nine_square">ตาราง 9 ช่อง</option>
-                <option value="songwriting">แต่งเพลงจากโจทย์</option>
-                <option value="debate">ถกเถียง</option>
-                <option value="dice_game">ทอดลูกเต๋า</option>
-                <option value="board_game">บอร์ดเกมส์</option>
-                <option value="snake_ladder">บันไดงู</option>
-                <option value="bingo">บิงโก</option>
-                <option value="sensory">ประสาทสัมผัส</option>
-                <option value="comparison">เปรียบเทียบ</option>
-                <option value="rock_paper_scissors">เป่า ยิง ฉุบ</option>
-                <option value="flip_cards">เปิดแผ่นป้าย</option>
-                <option value="venn_diagram">แผนภาพเวนน์: งานที่ควรทำ</option>
-                <option value="leaf_power">พลังใบ: นำใบไม้มาเรียงเล่าเรื่อง</option>
-                <option value="evaluate_incomplete">พิจารณาสิ่งที่ไม่สมบูรณ์</option>
-                <option value="post_it">โพสอิท</option>
-                <option value="short_film">ภาพยนต์สั้น</option>
-                <option value="line_drawing">โยงเส้น</option>
-                <option value="brainstorm">ระดมสมอง (Brainstorm)</option>
-                <option value="storytelling">เล่านิทาน</option>
-                <option value="answer_hunt">วิ่งหาคำตอบ</option>
-                <option value="create_project">สร้างชิ้นงาน</option>
-                <option value="individual_reflection">สะท้อนเป็นรายบุคคล</option>
-                <option value="dialogue">สุนทรียสนทนา</option>
-                <option value="six_hats">หมวก 6 ใบ</option>
-                <option value="pick_card">หยิบไพ่</option>
-                <option value="product_design">ออกแบบผลิตภัณฑ์</option>
-                <option value="read_stats">อ่านข้อมูลสถิติ</option>
-                <option value="innetka">อินเนทก้า: เรียงตาม Speed</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_technique">เทคนิค/กลยุทธการสอน:</label>
-            <select id="step1_technique" name="step1_technique">
-                <option value="recap">Recap: สะท้อนกลับ</option>
-                <option value="movement">การเคลื่อนไหว (Movement)</option>
-                <option value="focusing">การจุดรวมความสนใจ (Focusing)</option>
-                <option value="flipchart">การใช้ Flipchart</option>
-                <option value="powerpoint">การใช้ Power Point</option>
-                <option value="blackboard">การใช้กระดานดำ</option>
-                <option value="semantic">การใช้คำพูด (Semantic)</option>
-                <option value="problem_solving">การใช้โจทย์ปัญหา</option>
-                <option value="gesture">การใช้ท่าทางประกอบ (Gesture)</option>
-                <option value="situational">การใช้สถานการณ์</option>
-                <option value="model">การใช้หุ่นจำลอง</option>
-                <option value="focusing_words">การเน้นคำพูด (Focusing)</option>
-                <option value="changing_interaction">การเปลี่ยนแปลงแบบปฏิเสธสัมพันธ์ (Changing interaction)</option>
-                <option value="shifting_sensory">การแปรเปลี่ยนการรับสัมผัส (Shifting Sensory Charnels)</option>
-                <option value="attention_grabbing">การเร้าความสนใจ</option>
-                <option value="progress_encouragement">การเสริมกำลังใจด้วยการให้นักเรียนเห็นความก้าวหน้าของตน</option>
-                <option value="gesture_encouragement">การเสริมกำลังใจด้วยท่าทาง</option>
-                <option value="verbal_encouragement">การเสริมกำลังใจด้วยวาจา</option>
-                <option value="reward_encouragement">การเสริมกำลังด้วยการให้รางวัล</option>
-                <option value="visualization">การแสดงภาพ</option>
-                <option value="pausing">การหยุด (Pausing)</option>
-                <option value="silent_communication">การหยุด/การสื่อความเงียบ</option>
-                <option value="speech_pausing">การหยุดเว้นช่วงการพูด (Pausing)</option>
-                <option value="creative_questions">คำถามชวนคิดว่ามีอะไรแทนสิ่งที่มีอยู่</option>
-                <option value="change_questions">คำถามเพื่อคิดเปลี่ยนแปลง</option>
-                <option value="synthesis_questions">คำถามเพื่อคิดสังเคราะห์</option>
-                <option value="learning_questions">คำถามเพื่อชวนเรียนรู้</option>
-                <option value="connection_questions">คำถามเพื่อเชื่อมโยงกับเรื่องอื่น</option>
-                <option value="belief_modification">คำถามเพื่อดัดแปลงความเชื่อ</option>
-                <option value="belief_change">คำถามเพื่อเพื่อเปลี่ยนแปลงความเชื่อ</option>
-                <option value="provocative_questions">คำถามเพื่อยั่วยุ</option>
-                <option value="reduction_questions">คำถามเพื่อลดหรือตัดสิ่งที่มีอยู่</option>
-                <option value="swap_questions">คำถามสลับตำแหน่ง</option>
-                <option value="utility_questions">คำถามเอาไปใช้ประโยชน์อย่างอื่น</option>
-                <option value="questioning">ตั้งคำถาม</option>
-                <option value="review">ทวนความรู้เดิม</option>
-                <option value="lesson_boundary">แนะนำขอบเขตบทเรียน</option>
-                <option value="pause_speaking">พูดแล้วทิ้งช่วงให้เงียบ</option>
-                <option value="storytelling">เล่าเรื่อง</option>
-                <option value="problem_creation">สร้างประเด็นปัญหา</option>
-                <option value="life_stream">สายธารชีวิต</option>
-                <option value="guidance">อธิบายให้แนวทาง</option>
-                <option value="post_it">Post-It</option>
-                <option value="flipchart_paper">กระดาษ Flipchart</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-        <label for="step1_activity">กิจกรรมกระตุ้นผู้เรียน:</label>
-        <select id="step1_activity" name="step1_activity">
-            <option value="three_words">3 คำ ของวันนี้</option>
-            <option value="brain_gym">Brain Gym</option>
-            <option value="chair_game">เก้าอี้นี้อะไรก็ได้</option>
-            <option value="who_are_you">คุณเป็นใคร</option>
-            <option value="i_am_like">ฉันเปรียบได้กับ</option>
-            <option value="finger_ready">ชูนิ้ว วันนี้พร้อมระดับใด</option>
-            <option value="image_attention">ใช้ภาพสร้างความสนใจ</option>
-            <option value="massage">นวด</option>
-            <option value="recreation">นันทนาการ</option>
-            <option value="number_game">นับเลข 3-5-7</option>
-            <option value="drawing_topic">วาดรูปตามประเด็น</option>
-            <option value="multiplication_table">สูตรคูณแม่สอง</option>
-            <option value="multiplication_table">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-                   <label for="step1_classroom">การจัดห้องเรียน:</label>
-        <select id="step1_classroom" name="step1_classroom">
-            <option value="scattered">กระจายรอบห้อง</option>
-            <option value="small_group">กลุ่มย่อย</option>
-            <option value="brainstorm_group">กลุ่มระดมสมอง</option>
-            <option value="long_rows">จัดแถวแนวยาว</option>
-            <option value="group_rows">จัดแถวเป็นกลุ่ม</option>
-            <option value="stage">จัดห้องเป็นเวที</option>
-            <option value="pairing">จับคู่</option>
-            <option value="computer_use">ใช้คอมพิวเตอร์</option>
-            <option value="u_shape">ตัวยู</option>
-            <option value="lying_down">นอนราบกับพื้น</option>
-            <option value="circle">นั่งเป็นวงกลม</option>
-            <option value="interest_group">แบ่งกลุ่มตามความสนใจ</option>
-            <option value="ability_group">แบ่งกลุ่มตามความสามารถ</option>
-            <option value="normal_classroom">ห้องเรียนปกติ</option>
-            <option value="none">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_teacher_role">บทบาทผู้สอน:</label>
-<select id="step1_teacher_role" name="step1_teacher_role">
-    <option value="advising">Advising: การให้คำปรึกษา (แนวทาง/แนะนำ)</option>
-    <option value="coaching">Coaching: การฝึก/สอน ช่วยแก้ปัญหา</option>
-    <option value="consulting">Consulting: การให้คำปรึกษา (เนื้อหาเชิงลึก)</option>
-    <option value="counseling">Counseling: ให้คำปรึกษา (สร้างพลังใจ)</option>
-    <option value="facilitating">Facilitating: การอำนวยความสะดวก</option>
-    <option value="mentoring">Mentoring: การให้คำปรึกษา (พี่เลี้ยง/สอนงาน)</option>
-    <option value="teaching">Teaching: การสอนความรู้</option>
-    <option value="training">Training: การอบรมความรู้</option>
+<br><br>
+<label for="step${stepCount}_activity">การจัดห้องเรียน:</label>
+<select id="step${stepCount}_activity" name="step${stepCount}_activity">
+    <option value="spread_around_room">1) กระจายรอบห้อง</option>
+    <option value="small_group">2) กลุ่มย่อย</option>
+    <option value="brainstorming_group">3) กลุ่มระดมสมอง</option>
+    <option value="straight_row">4) จัดแถวแนวยาว</option>
+    <option value="group_row">5) จัดแถวเป็นกลุ่ม</option>
+    <option value="stage_setup">6) จัดห้องเป็นเวที</option>
+    <option value="pairing">7) จับคู่</option>
+    <option value="use_computer">8) ใช้คอมพิวเตอร์</option>
+    <option value="u_shape">9) ตัวยู</option>
+    <option value="lay_down_floor">10) นอนราบกับพื้น</option>
+    <option value="circle_sitting">11) นั่งเป็นวงกลม</option>
+    <option value="group_by_interest">12) แบ่งกลุ่มตามความสนใจ</option>
+    <option value="group_by_ability">13) แบ่งกลุ่มตามความสามารถ</option>
+    <option value="normal_classroom">14) ห้องเรียนปกติ</option>
+    <option value="none">ไม่มี</option>
 </select>
-
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_notes">บรรยาย:</label>
-            <textarea id="step1_notes" name="step1_notes"></textarea><br><br>
-
-            <!-- Repeat similar structure for steps 2-6 -->
-        </div>
-<div id="teaching_steps">
-        <div id="teaching_steps">
-               <h4>ขั้นตอนที 5 <input type="text" id="objective" name="objective" required><br><br>
-          <label for="step1_method">วิธีการสอน:</label>
-            <select id="step1_method" name="step1_method">
-            <option value="case_study">กรณีศึกษา (Case Study Method)</option>
-            <option value="socratic">โซคราติส (Socratic Method)</option>
-            <option value="laboratory">ทดลอง (Laboratory Method)</option>
-            <option value="tutoring">ทบทวน (Tutoring Method)</option>
-            <option value="field_trip">ทัศนศึกษา</option>
-            <option value="deductive">นิรนัย: ครูหลักการ นักเรียนพิสูจน์</option>
-            <option value="role_play">บทบาทสมมุติ (Role Play)</option>
-            <option value="lecture">บรรยาย (Lecturing Method)</option>
-            <option value="group_problem_solving">แบ่งกลุ่มแก้ปัญหา (Syndicate Method)</option>
-            <option value="performance">ปฏิบัติ (Performance Method)</option>
-            <option value="sensory">ประสาทสัมผัส</option>
-            <option value="study_assignment">มอบหมายงาน (Study Assignment Method)</option>
-            <option value="learning_center">ศูนย์การเรียนรู้</option>
-            <option value="simulation">สถานการณ์จำลอง</option>
-            <option value="demonstration">สาธิต (Demonstration Method)</option>
-            <option value="drama">แสดงละคร</option>
-            <option value="discussion">อภิปราย (Discussion Method)</option>
-            <option value="inductive">อุปนัย: นักเรียนสังเกตและหาคำตอบ</option>
-            <option value="none">ไม่มี</option>
-         <!-- Additional options omitted for brevity -->
-         
-            </select><br><br>
-            <label for="step1_group_activity">กิจกรรมกลุ่ม:</label>
-            <select id="step1_group_activity" name="step1_group_activity">
-                <option value="choice_mapping">Choice Mapping</option>
-                <option value="gallery_walk">Gallery Walk</option>
-                <option value="rc">RC: แปะโจทย์หาคำตอบ</option>
-                <option value="stad">STAD</option>
-                <option value="tai">TAI</option>
-                <option value="tgt">TGT</option>
-                <option value="think_pair_share">Think-Pair-Share</option>
-                <option value="timeline">Timeline: เรียงลำดับ</option>
-                <option value="why_why_diagram">Why Why Diagram</option>
-                <option value="world_cafe">World Café</option>
-                <option value="yes_no">Yes หรือ No</option>
-                <option value="game_show">เกมส์โชว์: ทายคำ</option>
-                <option value="charades">เกมส์ใบ้คำ</option>
-                <option value="pictionary">เกมส์ใบ้ภาพ</option>
-                <option value="cross_the_line">ข้ามเส้น</option>
-                <option value="write_assignment">เขียนตามโจทย์</option>
-                <option value="research">ค้นคว้าข้อมูล</option>
-                <option value="video_clip">คลิปวีดีโอ</option>
-                <option value="creative_thinking">คิดสร้างสรรค์</option>
-                <option value="matching">จับคู่คำ</option>
-                <option value="jigsaw">จิ๊กซอ</option>
-                <option value="imagination">จินตนาการ</option>
-                <option value="stance">จุดยืน: ตัดสินใจตามสิ่งที่คิด</option>
-                <option value="shindoku">ชินโดกุ (Syncronicity)</option>
-                <option value="use_devices">ใช้โทรศัพท์หรือแทปเล็ต</option>
-                <option value="use_objects">ใช้วัตถุหรือสิ่งของใกล้ตัว</option>
-                <option value="knowledge_market">ตลาดนัดความรู้</option>
-                <option value="nine_square">ตาราง 9 ช่อง</option>
-                <option value="songwriting">แต่งเพลงจากโจทย์</option>
-                <option value="debate">ถกเถียง</option>
-                <option value="dice_game">ทอดลูกเต๋า</option>
-                <option value="board_game">บอร์ดเกมส์</option>
-                <option value="snake_ladder">บันไดงู</option>
-                <option value="bingo">บิงโก</option>
-                <option value="sensory">ประสาทสัมผัส</option>
-                <option value="comparison">เปรียบเทียบ</option>
-                <option value="rock_paper_scissors">เป่า ยิง ฉุบ</option>
-                <option value="flip_cards">เปิดแผ่นป้าย</option>
-                <option value="venn_diagram">แผนภาพเวนน์: งานที่ควรทำ</option>
-                <option value="leaf_power">พลังใบ: นำใบไม้มาเรียงเล่าเรื่อง</option>
-                <option value="evaluate_incomplete">พิจารณาสิ่งที่ไม่สมบูรณ์</option>
-                <option value="post_it">โพสอิท</option>
-                <option value="short_film">ภาพยนต์สั้น</option>
-                <option value="line_drawing">โยงเส้น</option>
-                <option value="brainstorm">ระดมสมอง (Brainstorm)</option>
-                <option value="storytelling">เล่านิทาน</option>
-                <option value="answer_hunt">วิ่งหาคำตอบ</option>
-                <option value="create_project">สร้างชิ้นงาน</option>
-                <option value="individual_reflection">สะท้อนเป็นรายบุคคล</option>
-                <option value="dialogue">สุนทรียสนทนา</option>
-                <option value="six_hats">หมวก 6 ใบ</option>
-                <option value="pick_card">หยิบไพ่</option>
-                <option value="product_design">ออกแบบผลิตภัณฑ์</option>
-                <option value="read_stats">อ่านข้อมูลสถิติ</option>
-                <option value="innetka">อินเนทก้า: เรียงตาม Speed</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_technique">เทคนิค/กลยุทธการสอน:</label>
-            <select id="step1_technique" name="step1_technique">
-                <option value="recap">Recap: สะท้อนกลับ</option>
-                <option value="movement">การเคลื่อนไหว (Movement)</option>
-                <option value="focusing">การจุดรวมความสนใจ (Focusing)</option>
-                <option value="flipchart">การใช้ Flipchart</option>
-                <option value="powerpoint">การใช้ Power Point</option>
-                <option value="blackboard">การใช้กระดานดำ</option>
-                <option value="semantic">การใช้คำพูด (Semantic)</option>
-                <option value="problem_solving">การใช้โจทย์ปัญหา</option>
-                <option value="gesture">การใช้ท่าทางประกอบ (Gesture)</option>
-                <option value="situational">การใช้สถานการณ์</option>
-                <option value="model">การใช้หุ่นจำลอง</option>
-                <option value="focusing_words">การเน้นคำพูด (Focusing)</option>
-                <option value="changing_interaction">การเปลี่ยนแปลงแบบปฏิเสธสัมพันธ์ (Changing interaction)</option>
-                <option value="shifting_sensory">การแปรเปลี่ยนการรับสัมผัส (Shifting Sensory Charnels)</option>
-                <option value="attention_grabbing">การเร้าความสนใจ</option>
-                <option value="progress_encouragement">การเสริมกำลังใจด้วยการให้นักเรียนเห็นความก้าวหน้าของตน</option>
-                <option value="gesture_encouragement">การเสริมกำลังใจด้วยท่าทาง</option>
-                <option value="verbal_encouragement">การเสริมกำลังใจด้วยวาจา</option>
-                <option value="reward_encouragement">การเสริมกำลังด้วยการให้รางวัล</option>
-                <option value="visualization">การแสดงภาพ</option>
-                <option value="pausing">การหยุด (Pausing)</option>
-                <option value="silent_communication">การหยุด/การสื่อความเงียบ</option>
-                <option value="speech_pausing">การหยุดเว้นช่วงการพูด (Pausing)</option>
-                <option value="creative_questions">คำถามชวนคิดว่ามีอะไรแทนสิ่งที่มีอยู่</option>
-                <option value="change_questions">คำถามเพื่อคิดเปลี่ยนแปลง</option>
-                <option value="synthesis_questions">คำถามเพื่อคิดสังเคราะห์</option>
-                <option value="learning_questions">คำถามเพื่อชวนเรียนรู้</option>
-                <option value="connection_questions">คำถามเพื่อเชื่อมโยงกับเรื่องอื่น</option>
-                <option value="belief_modification">คำถามเพื่อดัดแปลงความเชื่อ</option>
-                <option value="belief_change">คำถามเพื่อเพื่อเปลี่ยนแปลงความเชื่อ</option>
-                <option value="provocative_questions">คำถามเพื่อยั่วยุ</option>
-                <option value="reduction_questions">คำถามเพื่อลดหรือตัดสิ่งที่มีอยู่</option>
-                <option value="swap_questions">คำถามสลับตำแหน่ง</option>
-                <option value="utility_questions">คำถามเอาไปใช้ประโยชน์อย่างอื่น</option>
-                <option value="questioning">ตั้งคำถาม</option>
-                <option value="review">ทวนความรู้เดิม</option>
-                <option value="lesson_boundary">แนะนำขอบเขตบทเรียน</option>
-                <option value="pause_speaking">พูดแล้วทิ้งช่วงให้เงียบ</option>
-                <option value="storytelling">เล่าเรื่อง</option>
-                <option value="problem_creation">สร้างประเด็นปัญหา</option>
-                <option value="life_stream">สายธารชีวิต</option>
-                <option value="guidance">อธิบายให้แนวทาง</option>
-                <option value="post_it">Post-It</option>
-                <option value="flipchart_paper">กระดาษ Flipchart</option>
-                <option value="none">ไม่มี</option>
-            </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-        <label for="step1_activity">กิจกรรมกระตุ้นผู้เรียน:</label>
-        <select id="step1_activity" name="step1_activity">
-            <option value="three_words">3 คำ ของวันนี้</option>
-            <option value="brain_gym">Brain Gym</option>
-            <option value="chair_game">เก้าอี้นี้อะไรก็ได้</option>
-            <option value="who_are_you">คุณเป็นใคร</option>
-            <option value="i_am_like">ฉันเปรียบได้กับ</option>
-            <option value="finger_ready">ชูนิ้ว วันนี้พร้อมระดับใด</option>
-            <option value="image_attention">ใช้ภาพสร้างความสนใจ</option>
-            <option value="massage">นวด</option>
-            <option value="recreation">นันทนาการ</option>
-            <option value="number_game">นับเลข 3-5-7</option>
-            <option value="drawing_topic">วาดรูปตามประเด็น</option>
-            <option value="multiplication_table">สูตรคูณแม่สอง</option>
-            <option value="multiplication_table">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-                   <label for="step1_classroom">การจัดห้องเรียน:</label>
-        <select id="step1_classroom" name="step1_classroom">
-            <option value="scattered">กระจายรอบห้อง</option>
-            <option value="small_group">กลุ่มย่อย</option>
-            <option value="brainstorm_group">กลุ่มระดมสมอง</option>
-            <option value="long_rows">จัดแถวแนวยาว</option>
-            <option value="group_rows">จัดแถวเป็นกลุ่ม</option>
-            <option value="stage">จัดห้องเป็นเวที</option>
-            <option value="pairing">จับคู่</option>
-            <option value="computer_use">ใช้คอมพิวเตอร์</option>
-            <option value="u_shape">ตัวยู</option>
-            <option value="lying_down">นอนราบกับพื้น</option>
-            <option value="circle">นั่งเป็นวงกลม</option>
-            <option value="interest_group">แบ่งกลุ่มตามความสนใจ</option>
-            <option value="ability_group">แบ่งกลุ่มตามความสามารถ</option>
-            <option value="normal_classroom">ห้องเรียนปกติ</option>
-            <option value="none">ไม่มี</option>
-        </select>
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
-
-            <label for="step1_teacher_role">บทบาทผู้สอน:</label>
-<select id="step1_teacher_role" name="step1_teacher_role">
-    <option value="advising">Advising: การให้คำปรึกษา (แนวทาง/แนะนำ)</option>
-    <option value="coaching">Coaching: การฝึก/สอน ช่วยแก้ปัญหา</option>
-    <option value="consulting">Consulting: การให้คำปรึกษา (เนื้อหาเชิงลึก)</option>
-    <option value="counseling">Counseling: ให้คำปรึกษา (สร้างพลังใจ)</option>
-    <option value="facilitating">Facilitating: การอำนวยความสะดวก</option>
-    <option value="mentoring">Mentoring: การให้คำปรึกษา (พี่เลี้ยง/สอนงาน)</option>
-    <option value="teaching">Teaching: การสอนความรู้</option>
-    <option value="training">Training: การอบรมความรู้</option>
+<br><br>
+<label for="step${stepCount}_activity">บทบาทผู้สอน:</label>
+<select id="step${stepCount}_activity" name="step${stepCount}_activity">
+    <option value="advising">1) การให้คำปรึกษา (แนวทาง/แนะนำ)</option>
+    <option value="coaching">2) การฝึก/สอน ช่วยแก้ปัญหา</option>
+    <option value="consulting">3) การให้คำปรึกษา (เนื้อหาเชิงลึก)</option>
+    <option value="counseling">4) ให้คำปรึกษา (สร้างพลังใจ)</option>
+    <option value="facilitating">5) การอำนวยความสะดวก</option>
+    <option value="mentoring">6) การให้คำปรึกษา (พี่เลี้ยง/สอนงาน)</option>
+    <option value="teaching">7) การสอนความรู้</option>
+    <option value="training">8) การอบรมความรู้</option>
+    <option value="none">ไม่มี</option>
 </select>
+<br><br>
+<label for="topic">บรรยายการสอน:</label>
+<textarea id="topic" name="topic"></textarea>
 
-                <!-- Additional options omitted for brevity -->
-            </select><br><br>
 
-            <label for="step1_notes">บรรยาย:</label>
-            <textarea id="step1_notes" name="step1_notes"></textarea><br><br>
+            </div>
+        </div>
 
-            <!-- Repeat similar structure for steps 2-6 -->
+        <div class="button-container">
+            <button type="button" id="addStepBtn">เพิ่มขั้นตอน</button>
+            <button type="button" id="removeStepBtn" disabled>ลดขั้นตอน</button>
+            <button type="button" onclick="window.print()">พิมพ์หน้าเว็บ</button>
         </div>
-<div id="teaching_steps">
-        <div id="teaching_steps">
-            <!-- Repeat similar structure for steps 2-6 -->
-        </div>
-<div id="teaching_steps">
-   
-        
-
-            <!-- Repeat similar structure for steps 2-6 -->
-        </div>
-            <!-- Repeat similar structure for steps 2-6 -->
-        </div>
-        <button type="button" onclick="window.print()">พิมพ์หน้าเว็บ</button>
     </form>
+
+    <script>
+        let stepCount = 1;
+
+        const addStepBtn = document.getElementById('addStepBtn');
+        const removeStepBtn = document.getElementById('removeStepBtn');
+        const teachingStepsContainer = document.getElementById('teaching_steps');
+
+        addStepBtn.addEventListener('click', () => {
+            stepCount++;
+            const newStep = document.createElement('div');
+            newStep.classList.add('step');
+            newStep.id = `step_${stepCount}`;
+            newStep.innerHTML = `
+               <h4>ขั้นตอนที่ ${stepCount}</h4>
+<label for="step${stepCount}_method">วิธีการสอน:</label>
+<select id="step${stepCount}_method" name="step${stepCount}_method">
+    <option value="case_study">1) กรณีศึกษา (Case Study Method)</option>
+    <option value="socratic">2) โซคราติส (Socratic Method)</option>
+    <option value="laboratory">3) ทดลอง (Laboratory Method)</option>
+    <option value="tutoring">4) ทบทวน (Tutoring Method)</option>
+    <option value="field_trip">5) ทัศนศึกษา</option>
+    <option value="deductive">6) นิรนัย: ครูหลักการ นักเรียนพิสูจน์</option>
+    <option value="role_play">7) บทบาทสมมุติ (Role Play)</option>
+    <option value="lecturing">8) บรรยาย (Lecturing Method)</option>
+    <option value="syndicate">9) แบ่งกลุ่มแก้ปัญหา (Syndicate Method)</option>
+    <option value="performance">10) ปฏิบัติ (Performance Method)</option>
+    <option value="sensory">11) ประสาทสัมผัส</option>
+    <option value="study_assignment">12) มอบหมายงาน (Study Assignment Method)</option>
+    <option value="learning_center">13) ศูนย์การเรียนรู้</option>
+    <option value="simulation">14) สถานการณ์จำลอง</option>
+    <option value="demonstration">15) สาธิต (Demonstration Method)</option>
+    <option value="role_playing">16) แสดงละคร</option>
+    <option value="discussion">17) อภิปราย (Discussion Method)</option>
+    <option value="inductive">18) อุปนัย: นักเรียนสังเกตและหาคำตอบ</option>
+    <option value="none">19) ไม่มี</option>
+</select>
+<br><br>
+
+               <label for="step${stepCount}_group_activity">กิจกรรมกลุ่ม:</label>
+<select id="step${stepCount}_group_activity" name="step${stepCount}_group_activity">
+    <option value="choice_mapping">1) Choice Mapping</option>
+    <option value="gallery_walk">2) Gallery Walk</option>
+    <option value="rc">3) RC: แปะโจทย์หาคำตอบ</option>
+    <option value="stad">4) STAD</option>
+    <option value="tai">5) TAI</option>
+    <option value="tgt">6) TGT</option>
+    <option value="think_pair_share">7) Think-Pair-Share</option>
+    <option value="timeline">8) Timeline: เรียงลำดับ</option>
+    <option value="why_why_diagram">9) Why Why Diagram</option>
+    <option value="world_cafe">10) World Café</option>
+    <option value="yes_no">11) Yes หรือ No</option>
+    <option value="game_show">12) เกมส์โชว์: ทายคำ</option>
+    <option value="guess_word">13) เกมส์ใบ้คำ</option>
+    <option value="guess_picture">14) เกมส์ใบ้ภาพ</option>
+    <option value="cross_line">15) ข้ามเส้น</option>
+    <option value="write_to_task">16) เขียนตามโจทย์</option>
+    <option value="research">17) ค้นคว้าข้อมูล</option>
+    <option value="video_clip">18) คลิปวีดีโอ</option>
+    <option value="creative_thinking">19) คิดสร้างสรรค์</option>
+    <option value="matching_words">20) จับคู่คำ</option>
+    <option value="jigsaw">21) จิ๊กซอ</option>
+    <option value="imagination">22) จินตนาการ</option>
+    <option value="stand_decision">23) จุดยืน: ตัดสินใจตามสิ่งที่คิด</option>
+    <option value="syndoku">24) ชินโดกุ (Syncronicity)</option>
+    <option value="use_phone">25) ใช้โทรศัพท์หรือแทปเล็ต</option>
+    <option value="use_nearby_objects">26) ใช้วัตถุหรือสิ่งของใกล้ตัว</option>
+    <option value="knowledge_market">27) ตลาดนัดความรู้</option>
+    <option value="nine_square_table">28) ตาราง 9 ช่อง</option>
+    <option value="create_song">29) แต่งเพลงจากโจทย์</option>
+    <option value="debate">30) ถกเถียง</option>
+    <option value="throw_dice">31) ทอดลูกเต๋า</option>
+    <option value="board_game">32) บอร์ดเกมส์</option>
+    <option value="snake_ladder">33) บันไดงู</option>
+    <option value="bingo">34) บิงโก</option>
+    <option value="sensory">35) ประสาทสัมผัส</option>
+    <option value="comparison">36) เปรียบเทียบ</option>
+    <option value="rock_paper_scissors">37) เป่า ยิง ฉุบ</option>
+    <option value="flip_card">38) เปิดแผ่นป้าย</option>
+    <option value="venn_diagram">39) แผนภาพเวนน์: งานที่ควรทำ</option>
+    <option value="leaf_story">40) พลังใบ: นำใบไม้มาเรียงเล่าเรื่อง</option>
+    <option value="incomplete_task">41) พิจารณาสิ่งที่ไม่สมบูรณ์</option>
+    <option value="post_it">42) โพสอิท</option>
+    <option value="short_movie">43) ภาพยนต์สั้น</option>
+    <option value="line_connecting">44) โยงเส้น</option>
+    <option value="brainstorm">45) ระดมสมอง (Brainstorm)</option>
+    <option value="storytelling">46) เล่านิทาน</option>
+    <option value="running_answer">47) วิ่งหาคำตอบ</option>
+    <option value="create_project">48) สร้างชิ้นงาน</option>
+    <option value="individual_reflection">49) สะท้อนเป็นรายบุคคล</option>
+    <option value="dialogue">50) สุนทรียสนทนา</option>
+    <option value="six_hats">51) หมวก 6 ใบ</option>
+    <option value="card_picking">52) หยิบไพ่</option>
+    <option value="design_product">53) ออกแบบผลิตภัณฑ์</option>
+    <option value="read_statistics">54) อ่านข้อมูลสถิติ</option>
+    <option value="innetka_speed">55) อินเนทก้า: เรียงตาม Speed</option>
+    <option value="none"> ไม่มี</option>
+</select>
+<br><br>
+
+
+<label for="step${stepCount}_technique">เทคนิค/กลยุทธ์การสอน:</label>
+<select id="step${stepCount}_technique" name="step${stepCount}_technique">
+    <option value="recap">1) Recap: สะท้อนกลับ</option>
+    <option value="movement">2) การเคลื่อนไหว (Movement)</option>
+    <option value="focusing">3) การจุดรวมความสนใจ (Focusing)</option>
+    <option value="flipchart">4) การใช้ Flipchart</option>
+    <option value="power_point">5) การใช้ Power Point</option>
+    <option value="blackboard">6) การใช้กระดานดำ</option>
+    <option value="semantic">7) การใช้คำพูด (Semantic)</option>
+    <option value="problem_solving">8) การใช้โจทย์ปัญหา</option>
+    <option value="gesture">9) การใช้ท่าทางประกอบ (Gesture)</option>
+    <option value="situational">10) การใช้สถานการณ์</option>
+    <option value="model">11) การใช้หุ่นจำลอง</option>
+    <option value="verbal_focusing">12) การเน้นคำพูด (Focusing)</option>
+    <option value="interaction_change">13) การเปลี่ยนแปลงแบบปฏิเสธสัมพันธ์ (Changing interaction)</option>
+    <option value="sensory_shifting">14) การแปรเปลี่ยนการรับสัมผัส (Shifting Sensory Channels)</option>
+    <option value="attention_stimulation">15) การเร้าความสนใจ</option>
+    <option value="progress_encouragement">16) การเสริมกำลังใจด้วยการให้นักเรียนเห็นความก้าวหน้าของตน</option>
+    <option value="gesture_encouragement">17) การเสริมกำลังใจด้วยท่าทาง</option>
+    <option value="verbal_encouragement">18) การเสริมกำลังใจด้วยวาจา</option>
+    <option value="reward_encouragement">19) การเสริมกำลังด้วยการให้รางวัล</option>
+    <option value="visualization">20) การแสดงภาพ</option>
+    <option value="pausing">21) การหยุด (Pausing)</option>
+    <option value="silent_communication">22) การหยุด/การสื่อความเงียบ</option>
+    <option value="speech_pausing">23) การหยุดเว้นช่วงการพูด (Pausing)</option>
+    <option value="creative_question">24) คำถามชวนคิดว่ามีอะไรแทนสิ่งที่มีอยู่</option>
+    <option value="transformational_question">25) คำถามเพื่อคิดเปลี่ยนแปลง</option>
+    <option value="synthesis_question">26) คำถามเพื่อคิดสังเคราะห์</option>
+    <option value="learning_question">27) คำถามเพื่อชวนเรียนรู้</option>
+    <option value="linking_question">28) คำถามเพื่อเชื่อมโยงกับเรื่องอื่น</option>
+    <option value="belief_modification">29) คำถามเพื่อดัดแปลงความเชื่อ</option>
+    <option value="belief_change">30) คำถามเพื่อเปลี่ยนแปลงความเชื่อ</option>
+    <option value="provocative_question">31) คำถามเพื่อยั่วยุ</option>
+    <option value="reduction_question">32) คำถามเพื่อลดหรือตัดสิ่งที่มีอยู่</option>
+    <option value="position_swap_question">33) คำถามสลับตำแหน่ง</option>
+    <option value="alternative_use_question">34) คำถามเอาไปใช้ประโยชน์อย่างอื่น</option>
+    <option value="general_questioning">35) ตั้งคำถาม</option>
+    <option value="knowledge_review">36) ทวนความรู้เดิม</option>
+    <option value="lesson_boundary">37) แนะนำขอบเขตบทเรียน</option>
+    <option value="pause_and_silence">38) พูดแล้วทิ้งช่วงให้เงียบ</option>
+    <option value="storytelling">39) เล่าเรื่อง</option>
+    <option value="problem_creation">40) สร้างประเด็นปัญหา</option>
+    <option value="life_stream">41) สายธารชีวิต</option>
+    <option value="guidance">42) อธิบายให้แนวทาง</option>
+    <option value="post_it">43) Post-It</option>
+    <option value="flipchart_paper">44) กระดาษ Flipchart</option>
+    <option value="none"> ไม่มี</option>
+</select>
+<br><br>
+<label for="step${stepCount}_activity">กิจกรรมกระตุ้นผู้เรียน:</label>
+<select id="step${stepCount}_activity" name="step${stepCount}_activity">
+    <option value="three_words_today">1) 3 คำ ของวันนี้</option>
+    <option value="brain_gym">2) Brain Gym</option>
+    <option value="anything_chair">3) เก้าอี้นี้อะไรก็ได้</option>
+    <option value="who_are_you">4) คุณเป็นใคร</option>
+    <option value="i_am_like">5) ฉันเปรียบได้กับ</option>
+    <option value="hand_up_ready">6) ชูนิ้ว วันนี้พร้อมระดับใด</option>
+    <option value="picture_attention">7) ใช้ภาพสร้างความสนใจ</option>
+    <option value="massage">8) นวด</option>
+    <option value="recreation">9) นันทนาการ</option>
+    <option value="count_3_5_7">10) นับเลข 3-5-7</option>
+    <option value="draw_topic">11) วาดรูปตามประเด็น</option>
+    <option value="multiplication_table_2">12) สูตรคูณแม่สอง</option>
+ <option value="multiplication_table_2">ไม่มี</option>
+</select>
+<br><br>
+<label for="step${stepCount}_activity">การจัดห้องเรียน:</label>
+<select id="step${stepCount}_activity" name="step${stepCount}_activity">
+    <option value="spread_around_room">1) กระจายรอบห้อง</option>
+    <option value="small_group">2) กลุ่มย่อย</option>
+    <option value="brainstorming_group">3) กลุ่มระดมสมอง</option>
+    <option value="straight_row">4) จัดแถวแนวยาว</option>
+    <option value="group_row">5) จัดแถวเป็นกลุ่ม</option>
+    <option value="stage_setup">6) จัดห้องเป็นเวที</option>
+    <option value="pairing">7) จับคู่</option>
+    <option value="use_computer">8) ใช้คอมพิวเตอร์</option>
+    <option value="u_shape">9) ตัวยู</option>
+    <option value="lay_down_floor">10) นอนราบกับพื้น</option>
+    <option value="circle_sitting">11) นั่งเป็นวงกลม</option>
+    <option value="group_by_interest">12) แบ่งกลุ่มตามความสนใจ</option>
+    <option value="group_by_ability">13) แบ่งกลุ่มตามความสามารถ</option>
+    <option value="normal_classroom">14) ห้องเรียนปกติ</option>
+    <option value="none">ไม่มี</option>
+</select>
+<br><br>
+<label for="step${stepCount}_activity">บทบาทผู้สอน:</label>
+<select id="step${stepCount}_activity" name="step${stepCount}_activity">
+    <option value="advising">1) Advising: การให้คำปรึกษา (แนวทาง/แนะนำ)</option>
+    <option value="coaching">2) Coaching: การฝึก/สอน ช่วยแก้ปัญหา</option>
+    <option value="consulting">3) Consulting: การให้คำปรึกษา (เนื้อหาเชิงลึก)</option>
+    <option value="counseling">4) Counseling: ให้คำปรึกษา (สร้างพลังใจ)</option>
+    <option value="facilitating">5) Facilitating: การอำนวยความสะดวก</option>
+    <option value="mentoring">6) Mentoring: การให้คำปรึกษา (พี่เลี้ยง/สอนงาน)</option>
+    <option value="teaching">7) Teaching: การสอนความรู้</option>
+    <option value="training">8) Training: การอบรมความรู้</option>
+    <option value="none">ไม่มี</option>
+</select>
+<label for="topic">บรรยายการสอน:</label>
+<textarea id="topic" name="topic"></textarea>
+
+
+            `;
+
+            teachingStepsContainer.appendChild(newStep);
+            removeStepBtn.disabled = false;
+        });
+
+        removeStepBtn.addEventListener('click', () => {
+            if (stepCount > 1) {
+                const lastStep = document.getElementById(`step_${stepCount}`);
+                teachingStepsContainer.removeChild(lastStep);
+                stepCount--;
+            }
+            if (stepCount === 1) {
+                removeStepBtn.disabled = true;
+            }
+        });
+    </script>
 </body>
 </html>
